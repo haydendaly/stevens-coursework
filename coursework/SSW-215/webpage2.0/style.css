@@ -1,0 +1,94 @@
+body {
+	background-color: #61B0E8; /*color arrangement created at http://paletton.com/#uid=13w0u0kjQSR8cZgeGWkoqOetdHn*/
+	color: #1D80C7;
+	font-family: Futura, Arial; /* Cycles through fonts if the user doesn't have them*/
+}
+
+a {
+	text-decoration: none;
+	color: #1D80C7;
+}
+
+h1 {
+	margin: 0;
+	font-size:64px;
+	font-style: italic;
+	color: #BEE1FA;
+}
+
+h2 {
+	margin: 0;
+}
+
+h3 {
+	margin-bottom: 0;
+}
+
+h6 {
+	margin-top: 0;
+	margin-bottom: 7;
+
+}
+
+button {
+	border: none;
+	padding: 15px 30px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-family: Futura, Arial;
+	background-color: #3E9ADB;
+	border-radius: 12px;
+	font-size: 16;
+	color: white;
+
+}
+
+#container {
+	background-color: #BEE1FA;
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#header {
+	background-color: #1D80C7;
+	color: white;
+	text-align: center;
+	padding: 10px;
+}
+
+#content {
+	padding: 10px;
+}
+
+#nav {
+	color: #BEE1FA;
+	width: 180px;
+	float: left;
+	background-color: #3E9ADB;
+	padding: 10px;
+	border-radius: 12px;
+}
+
+#nav ul { /*Naviation Menu*/
+	list-style-type: none; /*Gets rid of bullet points*/
+}
+
+#nav .selected {
+	font-weight: bold;
+	color: #BEE1FA;
+}
+
+#main {
+	width: 600px;
+	float: right;
+}
+
+#footer {
+	clear: both;
+	padding: 10px;
+	background-color: #1D80C7;
+	color: #BEE1FA;
+	text-align: right;
+}

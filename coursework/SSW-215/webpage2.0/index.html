@@ -1,0 +1,86 @@
+<!--Used this video as a source https://www.youtube.com/watch?v=0afZj1G0BIE
+and this https://dom.spec.whatwg.org/#dom-document-getelementsbyclassname-->
+<!--I pledge my honor that I have abided by the Stevens Honor System - Hayden C. Daly-->
+
+<html>
+	<head>
+		<title>Hayden Daly's Website</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<h1>Hayden Daly</h1>
+			</div>
+			<div id="content">
+				<div id="nav">
+					<h3>Navigation</h3>
+					<ul>
+						<li><class="selected">Home</li>
+						<li>Download Resume</li>
+					</ul>
+				</div>
+
+				<div id="main">
+					<h2>Welcome!</h2>
+					<h6>11:06am January 31 2019</h6>
+				<p>Welcome to the homepage of my personal website! The site is in its preliminary stages right now but within due time, you'll be able to find all of the following here:
+				</p>
+				<p class="hiddenMessage"></p>
+				<p>
+
+        		 <ul id = "list">  
+        		 	<li> A shop containing my books </li> 
+       			    <li> A personal blog </li> 
+       			    <li> Some music/reading pairings </li>
+        		    <li> News on my upcoming books </li>
+         		   	<li> And more! </li>
+      		    </ul>
+    			</p>
+    			<center><button onclick="changeColor()" id="button">Press for Night Mode</button></center>
+    			<br>
+    			<center><button onclick="hiddenMsg()" class="button1">Press for A Surprise</button></center>
+    			<br>
+    			<center><button onclick="hiddenMsg2()">Press for Another Surprise</button></center>
+
+    			<script type="text/javascript">
+    				var body = document.querySelector("body");
+    				var button = document.getElementById("button");
+    				var button1 = document.getElementsByClassName("button1")[0];
+    				var button2 = document.getElementsByTagName("button")[2];
+    				var bool1;
+    				var bool2;
+
+    				function changeColor() {
+    					if (bool1 == false) {
+    				 		button.innerHTML = "Press for Night Mode";
+    						body.style.background = "#61B0E8";
+    						bool1 = true;
+    					}
+
+    					else {
+    						button.innerHTML = "Press for Day Mode";
+    						body.style.background = "#253C3C";
+    						bool1 = false;
+    					}
+    				}
+
+    				function hiddenMsg() {
+    					button1.innerHTML = "This is the surprise lol";
+    				}
+
+    				function hiddenMsg2()  {
+    					button2.innerHTML = "This is the other surprise";
+    				}
+
+ 
+    			</script>
+    			<p id="date"></p>
+			</div>
+		</div>
+		<div id="footer">
+			Copyright &copy; 2019 Hayden Daly
+
+		</div>
+	</div>
+</body>
