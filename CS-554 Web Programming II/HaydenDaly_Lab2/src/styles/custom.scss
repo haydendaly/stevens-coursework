@@ -1,0 +1,86 @@
+@import "variables";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/modal";
+@import "bootstrap/scss/close";
+
+@mixin border-bottom($size) {
+	border-bottom: $size solid #000;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body,
+html {
+	background: $body-background;
+	color: $primary-text;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: $primary-font-size;
+	background-clip: border-box;
+	scroll-behavior: smooth;
+}
+
+h1 {
+	font-size: $large-font-size;
+}
+
+h2 {
+	font-size: $modal-font-size;
+	font-weight: bold;
+}
+
+p {
+	font-size: $secondary-font-size;
+}
+
+.shadow {
+	box-shadow: 5px 5px 5px $primary-text;
+}
+
+.sidebar {
+	background-color: $secondary-background;
+	margin: 0;
+	padding: 0;
+	width: 300px;
+	position: fixed;
+	height: 100%;
+	overflow: auto;
+}
+  
+.sidebar a {
+	display: block;
+	color: #eee;
+	padding: 16px;
+	text-decoration: none;
+}
+  
+.sidebar a:hover {
+	background-color: $body-background;
+}
+  
+.content {
+	margin-left: 300px;
+}
+  
+@media screen and (max-width: 700px) {
+	.sidebar {
+	  	width: 100%;
+	  	height: auto;
+		position: relative;
+	}
+	.sidebar a {float: left;}
+	.content {margin-left: 0;}
+}
+  
+@media screen and (max-width: 400px) {
+	.sidebar a {
+	  	text-align: center;
+	  	float: none;
+	}
+}
