@@ -1,0 +1,23 @@
+<div class="container" id="{{data.id}}" class="px-3 pt-4">
+  <div class="row">
+    <div class="col-8 pt-2">
+          <h1 class="card-title">{{data.name}}</h1>
+          <p class="card-text"><b>Summary:</b> {{{data.summary}}}</p>
+          <p class="card-text"><b>Type:</b> {{data.type}}</p>
+          <p class="card-text"><b>Language:</b> {{data.language}}</p>
+          <p class="card-text"><b>Status:</b> {{data.state}}</p>
+          <p class="card-text"><b>Runtime:</b> {{data.runtime}}</p>
+          <p class="card-text"><b>Network:</b> {{data.network.name}}</p>
+          <p class="card-text"><b>Country:</b> {{data.network.country.name}}</p>
+          <a type="button" class="btn btn-secondary" href="{{data.url}}">
+            More Information
+          </a>
+          <a type="button" class="btn btn-secondary" href="{{data.officialSite}}">
+            Official Site
+          </a>
+    </div>
+    <div class="col-4">
+      <img src="{{data.image.medium}}" class="rounded pt-5" alt="{{data.name}} Image">
+    </div>
+  </div>
+</div>

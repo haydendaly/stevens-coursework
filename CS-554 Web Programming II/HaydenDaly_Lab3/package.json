@@ -4,6 +4,7 @@
   "description": "Lab using Redis and Handlebars",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Hayden C. Daly",
@@ -12,7 +13,9 @@
     "axios": "^0.20.0",
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
     "flat": "^5.0.2",
     "node-redis": "^0.1.7",
     "redis": "^3.0.2"

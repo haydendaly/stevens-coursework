@@ -1,0 +1,68 @@
+body {
+    background-color: #1F2D3D;
+    padding: 20px;
+    margin: 0;
+  }
+
+  * {
+    font-family: sans-serif;
+  }
+
+  h1 {
+    color: #F9FAFC;
+    font-weight: 600;
+  }
+
+  h2, h3, h4, p, ul, li, span {
+    color: #E5E9F2;
+    text-decoration: none;
+  }
+
+  input {
+    color: #E5E9F2;
+    background-color: #273444;
+    padding: 3px;
+    border: none;
+  }
+
+  Link, a, link {
+    color: #E5E9F2;
+    text-decoration: none;
+  }
+
+  ul.header li {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+  }
+  ul.header {
+    background-color: #273444;
+    padding: 0;
+    border-radius: 20px;
+  }
+  ul.header li a {
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px;
+    display: inline-block;
+  }
+  .content {
+    background-color: #3C4858;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .content h2 {
+    padding: 0;
+    margin: 0;
+  }
+  .content li {
+    margin-bottom: 10px;
+  }
+
+  .card-view {
+    background-color: #1F2D3D;
+    border-radius: 20px;
+    overflow: hidden;
+  }

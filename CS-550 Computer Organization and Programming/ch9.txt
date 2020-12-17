@@ -1,0 +1,14 @@
+9.7 What is polling used for? What are the disadvantages of polling? What is a better way to perform the same job?
+
+Polling is a process where the CPU keeps checking all input devices to see if there exists any data waiting to be inputted. This checks continuously to make sure there are no waiting I/O operations and this is the most basic way for an I/O device to communicate with the CPU. Polling is good because it will continously check I/O devices so stay up to date but this creates many unneeded polls and takes a lot of CPU usage. However, it has an advantage over interupts because it has works in a deterministic manner. You can do it "better" with interupts though because this reduces the usage of processor resources as they are only used when necessary. The normal execution is interrupted for events in this case.
+
+9.12 In general, what purpose does an interrupt serve? Stated another way, suppose there were no interrupts provided in a computer. What capabilities would be lost?
+
+The general purpose of an interrupt is to allow interruptions to the normal execution flow which allows for a lot of I/O functionality. It allows for the ability to generate kernel level calls to the hardware allowing for dynamic computation ability. Without interupts, computers would just be finite state machines and not able to alter during runtime.
+
+9.CE If my CPU runs at 4.0GHz, and on average takes 10 clock cycles to complete an instruction, how many instructions will be completed in the time it takes to type "MY CPU IS RUNNING NOW"? Assume it takes 5 seconds to type the message. Show your work and how you arrived at the solution.
+
+The time it taks a program to run = (number of instructions)*(the clock cycles per instruction)*(period of the clock)
+This brings us to: t = k*c*1/f where t = time, k = number of instructions, c = the clocks cycles per instruction, f = frequency.
+
+We are looking for k so we can change it to: k = t*f/c = 5*4*10^9 / 10 = 2*10^9 instructions 

@@ -1,0 +1,14 @@
+<table class="table table-hover table-dark">
+    <h1 class='pl-2 pt-3'>Showing Top 10 Searches:</h1>
+    {{#if listExists}}
+      <ul>
+        {{#each data}}
+          <tr>
+            <td>{{name}}</td>
+          </tr>
+        {{/each}}
+      </ul>
+    {{else}}
+      <h2 class='p-2'>No Data Found :-/</h2>
+    {{/if}}
+</table>

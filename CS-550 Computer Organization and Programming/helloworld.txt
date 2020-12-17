@@ -1,0 +1,13 @@
+	public	start
+	org $1000
+	
+start:
+	lea		message, A1
+	move.b	#14, D0
+	trap	#15
+	simhalt
+	
+message DC.B	'Hello World', 0
+	end start
+
+

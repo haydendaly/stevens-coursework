@@ -1,0 +1,24 @@
+{
+	"name": "graphql-apollo",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node index.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"apollo-server": "^2.18.2",
+		"axios": "^0.19.2",
+		"bluebird": "^3.7.2",
+		"fetch": "^1.1.0",
+		"graphql": "^15.0.0",
+		"lodash": "^4.17.20",
+		"redis": "^3.0.2",
+		"unsplash-js": "^6.3.0",
+		"uuid": "^8.0.0"
+	}
+}
