@@ -1,0 +1,8 @@
+Program,Solution,Seconds
+SimpleMCMain1,92.1472,120.545
+SimpleMCMain1_Decoupled,92.1472,111.135
+SimpleMCMain1_MKL,92.1453,12.129
+SimpleMCMain1_Threaded_1,92.1453,8.616
+SimpleMCMain1_Threaded_2,92.1452,8.895
+SimpleMCMain1_Vector_1,92.149,17.4705
+SimpleMCMain1_Vector_2,92.1432,3.62353

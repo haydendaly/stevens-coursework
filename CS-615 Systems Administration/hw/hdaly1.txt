@@ -1,0 +1,268 @@
+# CS 615 Homework 1
+
+I pledge my honor I have abided by the Stevens Honor System - Hayden C. Daly
+
+## Basic Commands
+
+### uname -a
+
+```
+NetBSD ip-172-31-85-70.ec2.internal 9.99.78 NetBSD 9.99.78 (GENERIC) #0: Fri Jan 22 00:44:55 UTC 2021  mkrepro@mkrepro.NetBSD.org:/usr/src/sys/arch/amd64/compile/GENERIC amd64
+```
+
+### whoami
+
+```
+root
+```
+
+### date
+
+```
+Wed Feb  3 23:19:15 UTC 2021
+```
+
+### w
+
+```
+11:19PM  up 14 mins, 1 user, load averages: 0.00, 0.00, 0.00
+USER     TTY     FROM                            LOGIN@  IDLE WHAT
+root     pts/0   ool-18baf145.dyn.optonline.net 11:06PM     0 w
+```
+
+### ifconfig -a
+```
+xennet0: flags=0x8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+        capabilities=0x17c00<TCP4CSUM_Rx,TCP4CSUM_Tx,UDP4CSUM_Rx,UDP4CSUM_Tx>
+        capabilities=0x17c00<TCP6CSUM_Rx,UDP6CSUM_Rx>
+        enabled=0
+        ec_capabilities=0x5<VLAN_MTU,JUMBO_MTU>
+        ec_enabled=0
+        address: 12:f0:f4:51:aa:c9
+        inet 172.31.85.70/20 broadcast 172.31.95.255 flags 0
+        inet6 fe80::dc7b:c638:443b:53b5%xennet0/64 flags 0 scopeid 0x1
+lo0: flags=0x8049<UP,LOOPBACK,RUNNING,MULTICAST> mtu 33624
+        status: active
+        inet 127.0.0.1/8 flags 0
+        inet6 ::1/128 flags 0x20<NODAD>
+        inet6 fe80::1%lo0/64 flags 0 scopeid 0x2
+```
+
+### netstat -na
+
+```
+Active Internet connections (including servers)
+Proto Recv-Q Send-Q  Local Address          Foreign Address        State
+tcp        0     36  172.31.85.70.22        24.186.241.69.56740    ESTABLISHED
+tcp        0      0  *.22                   *.*                    LISTEN
+udp        0      0  *.68                   *.*
+udp        0      0  *.*                    *.*
+Active Internet6 connections (including servers)
+Proto Recv-Q Send-Q  Local Address          Foreign Address        (state)
+tcp6       0      0  *.22                   *.*                    LISTEN
+udp6       0      0  *.546                  *.*
+udp6       0      0  *.*                    *.*
+Active UNIX domain sockets
+Address  Type   Recv-Q Send-Q    Inode     Conn     Refs  Nextref Addr
+ffff8e8cc5d16280 stream      0      0        0 ffff8e8cc5d161c0        0        0
+ffff8e8cc5d161c0 stream      0      0        0 ffff8e8cc5d16280        0        0
+ffff8e8ccdb01f40 stream      0      0        0 ffff8e8ccdb01e80        0        0
+ffff8e8ccdb01e80 stream      0      0        0 ffff8e8ccdb01f40        0        0
+ffff8e8ccdb01d00 stream      0      0 ffff8e8cc6d5bd40        0        0        0 private/scache
+ffff8e8ccdb01c40 stream      0      0        0 ffff8e8ccdb01b80        0        0
+ffff8e8ccdb01b80 stream      0      0        0 ffff8e8ccdb01c40        0        0
+ffff8e8ccdb01a00 stream      0      0 ffff8e8cc6d5bac0        0        0        0 private/anvil
+ffff8e8ccdb01940 stream      0      0        0 ffff8e8ccdb01880        0        0
+ffff8e8ccdb01880 stream      0      0        0 ffff8e8ccdb01940        0        0
+ffff8e8ccdb01700 stream      0      0 ffff8e8cc6d5b840        0        0        0 private/lmtp
+ffff8e8ccdb01640 stream      0      0        0 ffff8e8ccdb01580        0        0
+ffff8e8ccdb01580 stream      0      0        0 ffff8e8ccdb01640        0        0
+ffff8e8ccdb01400 stream      0      0 ffff8e8cc6d5b5c0        0        0        0 private/virtual
+ffff8e8ccdb01340 stream      0      0        0 ffff8e8ccdb01280        0        0
+ffff8e8ccdb01280 stream      0      0        0 ffff8e8ccdb01340        0        0
+ffff8e8ccdb01100 stream      0      0 ffff8e8cc6d5b340        0        0        0 private/local
+ffff8e8ccdb01040 stream      0      0        0 ffff8e8cc67e4f40        0        0
+ffff8e8cc67e4f40 stream      0      0        0 ffff8e8ccdb01040        0        0
+ffff8e8cc67e4dc0 stream      0      0 ffff8e8cc6d5b0c0        0        0        0 private/discard
+ffff8e8cc67e4d00 stream      0      0        0 ffff8e8cc67e4c40        0        0
+ffff8e8cc67e4c40 stream      0      0        0 ffff8e8cc67e4d00        0        0
+ffff8e8cc67e4ac0 stream      0      0 ffff8e8cc6d43d00        0        0        0 private/retry
+ffff8e8cc67e4a00 stream      0      0        0 ffff8e8cc67e4940        0        0
+ffff8e8cc67e4940 stream      0      0        0 ffff8e8cc67e4a00        0        0
+ffff8e8cc67e47c0 stream      0      0 ffff8e8cc6d43a80        0        0        0 private/error
+ffff8e8cc67e4700 stream      0      0        0 ffff8e8cc67e4640        0        0
+ffff8e8cc67e4640 stream      0      0        0 ffff8e8cc67e4700        0        0
+ffff8e8cc67e44c0 stream      0      0 ffff8e8cc6d43800        0        0        0 public/showq
+ffff8e8cc67e4400 stream      0      0        0 ffff8e8cc67e4340        0        0
+ffff8e8cc67e4340 stream      0      0        0 ffff8e8cc67e4400        0        0
+ffff8e8cc67e41c0 stream      0      0 ffff8e8cc6d43580        0        0        0 private/relay
+ffff8e8cc67e4100 stream      0      0        0 ffff8e8cc67e4040        0        0
+ffff8e8cc67e4040 stream      0      0        0 ffff8e8cc67e4100        0        0
+ffff8e8cc5ed4e80 stream      0      0 ffff8e8cc6d43300        0        0        0 private/smtp
+ffff8e8cc5ed4dc0 stream      0      0        0 ffff8e8cc5ed4d00        0        0
+ffff8e8cc5ed4d00 stream      0      0        0 ffff8e8cc5ed4dc0        0        0
+ffff8e8cc5ed4b80 stream      0      0 ffff8e8cc6d43080        0        0        0 private/proxywrite
+ffff8e8cc5ed4ac0 stream      0      0        0 ffff8e8cc5ed4a00        0        0
+ffff8e8cc5ed4a00 stream      0      0        0 ffff8e8cc5ed4ac0        0        0
+ffff8e8cce7f8100 stream      0      0 ffff8e8ccdaa1cc0        0        0        0 private/proxymap
+ffff8e8cc68a2280 stream      0      0        0 ffff8e8cc5ed4280        0        0
+ffff8e8cc5ed4280 stream      0      0        0 ffff8e8cc68a2280        0        0
+ffff8e8cc3d6e400 stream      0      0 ffff8e8ccdaa1a40        0        0        0 public/flush
+ffff8e8cce7f8f40 stream      0      0        0 ffff8e8cc413db80        0        0
+ffff8e8cc413db80 stream      0      0        0 ffff8e8cce7f8f40        0        0
+ffff8e8cc3e6eb80 stream      0      0 ffff8e8ccdaa17c0        0        0        0 private/verify
+ffff8e8cce7f8ac0 stream      0      0        0 ffff8e8cc413df40        0        0
+ffff8e8cc413df40 stream      0      0        0 ffff8e8cce7f8ac0        0        0
+ffff8e8cc413d880 stream      0      0 ffff8e8ccdaa1540        0        0        0 private/trace
+ffff8e8cc68a2d00 stream      0      0        0 ffff8e8cc4ffb100        0        0
+ffff8e8cc4ffb100 stream      0      0        0 ffff8e8cc68a2d00        0        0
+ffff8e8cc4ffbd00 stream      0      0 ffff8e8ccdaa12c0        0        0        0 private/defer
+ffff8e8cc048e040 stream      0      0        0 ffff8e8cce7f81c0        0        0
+ffff8e8cce7f81c0 stream      0      0        0 ffff8e8cc048e040        0        0
+ffff8e8cc5ed4880 stream      0      0 ffff8e8ccdaa1040        0        0        0 private/bounce
+ffff8e8cc5ed41c0 stream      0      0        0 ffff8e8cc4ffbe80        0        0
+ffff8e8cc4ffbe80 stream      0      0        0 ffff8e8cc5ed41c0        0        0
+ffff8e8cce7f8040 stream      0      0 ffff8e8cc8af2d80        0        0        0 private/rewrite
+ffff8e8cce7f8400 stream      0      0        0 ffff8e8cbfdbc940        0        0
+ffff8e8cbfdbc940 stream      0      0        0 ffff8e8cce7f8400        0        0
+ffff8e8cc5ed4340 stream      0      0 ffff8e8cc8af2b00        0        0        0 private/tlsmgr
+ffff8e8cc5ed4040 stream      0      0        0 ffff8e8cc4ffb880        0        0
+ffff8e8cc4ffb880 stream      0      0        0 ffff8e8cc5ed4040        0        0
+ffff8e8cce7f8700 stream      0      0 ffff8e8cc8af2880        0        0        0 public/qmgr
+ffff8e8cc5ed47c0 stream      0      0        0 ffff8e8cc4ffb640        0        0
+ffff8e8cc4ffb640 stream      0      0        0 ffff8e8cc5ed47c0        0        0
+ffff8e8cce7f8c40 stream      0      0 ffff8e8cc8af2600        0        0        0 public/cleanup
+ffff8e8cce7f8dc0 stream      0      0        0 ffff8e8cce7f84c0        0        0
+ffff8e8cce7f84c0 stream      0      0        0 ffff8e8cce7f8dc0        0        0
+ffff8e8cc5ed4700 stream      0      0 ffff8e8cc8af2380        0        0        0 public/pickup
+ffff8e8cbf8ca340 stream      0      0 ffff8e8cbfb5eb00        0        0        0 /var/run/dhcpcd/unpriv.sock
+ffff8e8cbf8ca040 stream      0      0 ffff8e8cbfb5e600        0        0        0 /var/run/dhcpcd/sock
+ffff8e8cbfe81100 stream      0      0        0 ffff8e8cbfe81040        0        0
+ffff8e8cbfe81040 stream      0      0        0 ffff8e8cbfe81100        0        0
+ffff8e8cbf9daf40 stream      0      0        0 ffff8e8cbf9dae80        0        0
+ffff8e8cbf9dae80 stream      0      0        0 ffff8e8cbf9daf40        0        0
+ffff8e8cc413d940 stream      0      0        0        0        0        0
+ffff8e8cc5d16700 dgram       0      0        0 ffff8e8cbfde37c0        0 ffff8e8cc5d16640 -> /var/run/log
+ffff8e8cc5d16040 dgram       0      0 ffff8e8cc5b07100        0        0        0 public/postlog
+ffff8e8cce7f8a00 dgram       0      0        0 ffff8e8cbfde37c0        0 ffff8e8ccbf607c0 -> /var/run/log
+ffff8e8cc5d16640 dgram       0      0        0 ffff8e8cbfde37c0        0 ffff8e8cce7f8a00 -> /var/run/log
+ffff8e8ccbf607c0 dgram       0      0        0 ffff8e8cbfde37c0        0 ffff8e8cbf8ca7c0 -> /var/run/log
+ffff8e8cc048e340 dgram       0      0        0        0        0        0
+ffff8e8cbf8ca7c0 dgram       0      0        0 ffff8e8cbfde37c0        0        0 -> /var/run/log
+ffff8e8cbfe81280 dgram       0      0        0 ffff8e8cbfe811c0 ffff8e8cbfe811c0        0
+ffff8e8cbfe811c0 dgram       0      0        0 ffff8e8cbfe81280 ffff8e8cbfe81280        0
+ffff8e8cbf9da100 dgram       0      0        0 ffff8e8cbf8ca100 ffff8e8cbf8ca100        0
+ffff8e8cbf8ca100 dgram       0      0        0 ffff8e8cbf9da100 ffff8e8cbf9da100        0
+ffff8e8cbfa274c0 dgram       0      0        0 ffff8e8cbf8cac40 ffff8e8cbf8cac40        0
+ffff8e8cbf8cac40 dgram       0      0        0 ffff8e8cbfa274c0 ffff8e8cbfa274c0        0
+ffff8e8cbfa27f40 dgram       0      0        0 ffff8e8cbf6fcc40 ffff8e8cbf6fcc40        0
+ffff8e8cbf6fcc40 dgram       0      0        0 ffff8e8cbfa27f40 ffff8e8cbfa27f40        0
+ffff8e8cbf8caac0 dgram       0      0        0 ffff8e8cbfa27400 ffff8e8cbfa27400        0
+ffff8e8cbfa27e80 dgram       0      0        0        0        0        0
+ffff8e8cbfa27400 dgram       0      0        0 ffff8e8cbf8caac0 ffff8e8cbf8caac0        0
+ffff8e8cbfde37c0 dgram       0      0 ffff8e8cc0dc9a40        0 ffff8e8cc5d16700        0 /var/run/log
+```
+
+## Other Commands
+
+### Partition table 
+
+Command: `fdisk`
+
+```
+Disk: /dev/rxbd0
+NetBSD disklabel disk geometry:
+cylinders: 10240, heads: 1, sectors/track: 2048 (2048 sectors/cylinder)
+total sectors: 20971520, bytes/sector: 512
+
+BIOS disk geometry:
+cylinders: 1023, heads: 255, sectors/track: 63 (16065 sectors/cylinder)
+total sectors: 20971520
+
+Partitions aligned to 2048 sector boundaries, offset 2048
+
+Partition table:
+0: NetBSD (sysid 169)
+    start 2048, size 3903488 (1906 MB, Cyls 0-243/27/40), Active
+1: <UNUSED>
+2: <UNUSED>
+3: <UNUSED>
+Bootselector disabled.
+First active partition: 0
+Drive serial number: 0 (0x00000000)
+```
+
+### Currently mounted filesystems
+
+Command: `mount`
+
+```
+/dev/xbd0a on / type ffs (local)
+ptyfs on /dev/pts type ptyfs (local)
+```
+
+### Display file space
+Command: `df`
+
+```
+Filesystem      1K-blocks         Used        Avail %Cap Mounted on
+/dev/xbd0a       10318062      1225974      8576186  12% /
+ptyfs                   1            1            0 100% /dev/pts
+```
+
+## Fill Disk Space
+
+Command: `dd if=/dev/zero of=nulls bs=$((10000))`
+
+```
+[ 3080.0551860] /: write failed, file system is full
+dd: nulls: No space left on device
+930699+0 records in
+930698+0 records out
+9306980000 bytes transferred in 144.533 secs (64393460 bytes/sec)
+```
+
+I didn't know this one so used sources 1, 2 (cited below). I was encountering an issue where using 1G for BS wasn't working so instead used 10000. I think this was too small of a number as the command took 2.5 minutes to execute. The file system is full:
+
+```
+Filesystem     Size   Used  Avail %Cap Mounted on
+/dev/xbd0a     9.8G   9.8G  -503M 105% /
+ptyfs          1.0K   1.0K     0B 100% /dev/pts
+```
+
+I was able to log out and back in to the instance. I also was able to create a new file using `vi` and save it. I validated the diskspace was still full so maybe they have a mechanism allowing for extra diskspace to make the system accessible. Not RAM but some wiggle room.
+
+## Inodes
+
+I created a bash script with the following code:
+
+```
+#!/bin/sh
+
+a=0
+
+while [ $a -lt 12807760 ]
+do
+   touch $((a));
+   a=`expr $a + 1`;
+done
+```
+
+Where `1280776` is the output of remaining space from `df -i`. I added a 0 so it would fail after 100%.
+
+To run the script, I gave access with `chmod +x fill.sh`.
+
+It took a long time but eventually the inodes filled up. I was able to ssh out and back in but `mkdir` wasn't working.
+
+
+## Reflection
+
+Overall the activity was a good refresher. I have never worked directly with filesystems or the NetBSD environment so had to do some research.
+
+## Sources Used
+
+1. https://man7.org/linux/man-pages/man1/dd.1.html
+2. https://unix.stackexchange.com/questions/292843/way-to-instantly-fill-up-use-up-lots-of-disk-space
+3. https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_02.html
+4. https://www.grymoire.com/Unix/Inodes.html
+

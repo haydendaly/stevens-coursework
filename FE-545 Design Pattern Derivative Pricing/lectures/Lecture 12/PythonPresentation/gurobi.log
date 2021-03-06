@@ -1,0 +1,39 @@
+
+Gurobi 8.0.0 (mac64, Python) logging started Fri Nov 16 20:28:17 2018
+
+Academic license - for non-commercial use only
+Changed value of parameter Method to 1
+   Prev: -1  Min: -1  Max: 5  Default: -1
+Optimize a model with 1 rows, 30 columns and 30 nonzeros
+Model has 465 quadratic objective terms
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [0e+00, 0e+00]
+  QObjective range [2e-05, 7e-03]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve time: 0.02s
+Presolved: 1 rows, 30 columns, 30 nonzeros
+Presolved model has 465 quadratic objective terms
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   0.000000e+00   0.000000e+00      0s
+      13    1.2988951e-04   0.000000e+00   0.000000e+00      0s
+
+Solved in 13 iterations and 0.05 seconds
+Optimal objective  1.298895104e-04
+Optimize a model with 2 rows, 30 columns and 60 nonzeros
+Model has 465 quadratic objective terms
+Coefficient statistics:
+  Matrix range     [4e-04, 1e+00]
+  Objective range  [0e+00, 0e+00]
+  QObjective range [2e-05, 7e-03]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [7e-03, 1e+00]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.2988951e-04   0.000000e+00   0.000000e+00      0s
+      19    3.5277508e-04   0.000000e+00   0.000000e+00      0s
+
+Solved in 19 iterations and 0.02 seconds
+Optimal objective  3.527750802e-04
+Freed default Gurobi environment

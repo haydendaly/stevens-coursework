@@ -1,0 +1,7 @@
+﻿  icl /Qm32 "/IC:\Users\Ricardo\Desktop\OpenMP Material\SimpleMonteCarlo-OMP-2\SimpleMonteCarlo-OMP" /ZI /W3 /MP /Od /Oi /Ot /Qipo /Qparallel /Quse-intel-optimized-headers -D __INTEL_COMPILER=1900 -D _MBCS /EHsc /MDd /GS /fp:fast=2 /QxHost /Qopenmp-offload /Qopenmp-offload:host /Zc:wchar_t /Zc:forScope /Qopenmp /FoDebug\ /FdDebug\vc140.pdb /Gd /TP Random1.cpp SimpleMCMain1.cpp
+  
+  Intel(R) C++ Intel(R) 64 Compiler for applications running on IA-32, Version 19.0.5.281 Build 20190815
+  Copyright (C) 1985-2019 Intel Corporation.  All rights reserved.
+  
+  Random1.cpp
+  SimpleMCMain1.cpp

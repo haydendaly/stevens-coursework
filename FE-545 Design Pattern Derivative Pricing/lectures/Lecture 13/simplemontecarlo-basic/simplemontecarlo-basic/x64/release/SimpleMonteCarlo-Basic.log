@@ -1,0 +1,18 @@
+﻿  Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x64
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /I"C:\Users\Ricardo\Desktop\SimpleMonteCarlo-Basic\SimpleMonteCarlo-Basic" /I"C:\Users\Ricardo\Desktop\OpenMP Material\SimpleMonteCarlo-Basic\SimpleMonteCarlo-Basic" /Zi /W3 /WX- /sdl /MP /O2 /Ob2 /Oi /Ot /Oy /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /fp:except /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Random1.cpp SimpleMCMain1.cpp
+  
+  cl /c /I"C:\Users\Ricardo\Desktop\SimpleMonteCarlo-Basic\SimpleMonteCarlo-Basic" /I"C:\Users\Ricardo\Desktop\OpenMP Material\SimpleMonteCarlo-Basic\SimpleMonteCarlo-Basic" /Zi /W3 /WX- /sdl /MP /O2 /Ob2 /Oi /Ot /Oy /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /fp:except /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Random1.cpp SimpleMCMain1.cpp
+  
+  cl /c /I"C:\Users\Ricardo\Desktop\SimpleMonteCarlo-Basic\SimpleMonteCarlo-Basic" /I"C:\Users\Ricardo\Desktop\OpenMP Material\SimpleMonteCarlo-Basic\SimpleMonteCarlo-Basic" /Zi /W3 /WX- /sdl /MP /O2 /Ob2 /Oi /Ot /Oy /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /fp:except /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Random1.cpp SimpleMCMain1.cpp
+  Random1.cpp
+  
+  SimpleMCMain1.cpp
+  Generating code
+  3 of 12 functions (25.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  SimpleMonteCarlo-Basic.vcxproj -> C:\Users\Ricardo\Desktop\OpenMP Material\SimpleMonteCarlo-Basic\x64\Release\SimpleMonteCarlo-Basic.exe
+  SimpleMonteCarlo-Basic.vcxproj -> C:\Users\Ricardo\Desktop\OpenMP Material\SimpleMonteCarlo-Basic\x64\Release\SimpleMonteCarlo-Basic.pdb (Full PDB)

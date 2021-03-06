@@ -1,0 +1,5 @@
+module.exports = {
+    TWILIO_KEY: "93fdf2d1c4b189d1f11eb57f33e3869e",
+    TWILIO_SID: "AC6bd104899f44583df4855d3a51da10f5",
+    FROM_NUM: "+16506006384"
+}
