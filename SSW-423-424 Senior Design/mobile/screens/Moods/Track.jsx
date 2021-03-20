@@ -21,11 +21,6 @@ const now = dayjs().local().format('DDMMYYYY');
 
 // console.log('Current timestamp: ', now);
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-
-// EB NOTES: Will need to implement FB document iteration logic for the first if statement below, because while checking the most recent or least recent mood entry makes sense
-// for updating that day's entry, it does not work for when you update a mood entry from any other point in the past, as it will not necessarily appear first or last
-
 export default function Track(props) {
 
     const { navigation } = props;
@@ -75,8 +70,6 @@ export default function Track(props) {
         navigation.goBack()
 
     };
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     return (
         <View
