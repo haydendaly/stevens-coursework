@@ -27,7 +27,7 @@ dayjs.extend(utc);
 
 import styles from "../../styles/journalStyles";
 import { UserContext } from "../../functions/providers/UserContext";
-import { color } from "../../functions/providers/ColorContext";
+import { ColorContext } from "../../functions/providers/ColorContext";
 import { awardsSchemes } from "../../functions/providers/AwardContext";
 const { SlideInMenu } = renderers;
 
@@ -44,6 +44,7 @@ export default function Journal(props) {
     deleteJournal,
     createAward
   } = useContext(UserContext);
+  const { color } = useContext(ColorContext);
 
   const [title, setTitle] = useState(data.title);
   const [body, setBody] = useState(data.body);
@@ -62,18 +63,17 @@ export default function Journal(props) {
   // componentWillUnmount equivalent https://stackoverflow.com/questions/55139386/componentwillunmount-with-react-useeffect-hook
   useEffect(() => {
     return () => {
-      updateJournal(userID, data.id, titleRef.current, bodyRef.current);
+      if (titleRef.current !== '' || bodyRef.current !== '') {
+        updateJournal(userID, data.id, titleRef.current, bodyRef.current);
+      }
     };
   }, [props.current]);
 
   return (
-    <MenuProvider>
+    <MenuProvider style={{backgroundColor: color.background}}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
         <View
-          style={{
-            ...styles.container,
-            backgroundColor: color.backgroundColor,
-          }}
+          style={styles.container}
         >
           <View style={styles.topnav}>
             <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -88,7 +88,7 @@ export default function Journal(props) {
                 </TouchableOpacity>
               )}
               <Menu name="numbers" renderer={SlideInMenu}>
-                <MenuTrigger
+                <MenuTrigger onPress={Keyboard.dismiss}
                   customStyles={{ triggerOuterWrapper: styles.trigger }}
                 >
                   <EIcon
@@ -98,7 +98,7 @@ export default function Journal(props) {
                     color={color.inactive}
                   />
                 </MenuTrigger>
-                <MenuOptions>
+                <MenuOptions style={{backgroundColor: color.primary}}>
                   <MenuOption
                     onSelect={() => {
                       createAward(awardsSchemes.starredEntry, userID),
@@ -117,7 +117,7 @@ export default function Journal(props) {
                     onSelect={() => {
                       createAward(awardsSchemes.privateEntry, userID),
                       lockJournal(userID, data.id, !data.private),
-                        alert(data.private ? `Unlocked` : "Locked"),
+                        alert(data.private ? `Open` : "Private"),
                         (data.private = !data.private);
                       if (data.starred && data.private){
                         createAward(awardsSchemes.privateAndStarredEntry, userID);
@@ -128,18 +128,13 @@ export default function Journal(props) {
                     text={data.private ? "Unlock" : "Lock"}
                   />
                   <MenuOption
-                    customStyles={{ optionText: [styles.bluetext] }}
-                    value={3}
-                    text="Share"
-                  />
-                  <MenuOption
                     onSelect={() => {
                       deleteJournal(userID, data.id),
                         alert(`Deleted`),
                         navigation.goBack();
                     }}
                     customStyles={{ optionText: [styles.redtext] }}
-                    value={4}
+                    value={3}
                     text="Delete"
                   />
                 </MenuOptions>
@@ -150,19 +145,21 @@ export default function Journal(props) {
             <TextInput
               keyboardType="default"
               placeholder="Journal Entry Title"
+              placeholderTextColor={color.inactive}
               style={{
                 fontSize: 28,
                 fontWeight: "bold",
+                color: color.primaryText
               }}
               value={title}
               onChangeText={setTitle}
             />
             {/* EB: two constants are aqcuired from firebase storage, simply displays two timestamps in journal UI */}
-            <Text style={styles.regtext}>
+            <Text style={{...styles.regtext, color: color.primaryText}}>
               {"Created: " +
                 dayjs(data.timeCreated).format("dddd MM/DD/YY hh:mm a")}
             </Text>
-            <Text style={styles.regtext}>
+            <Text style={{...styles.regtext, color: color.primaryText}}>
               {"Updated: " +
                 dayjs(data.lastUpdated).format("dddd MM/DD/YY hh:mm a")}
             </Text>
@@ -171,11 +168,13 @@ export default function Journal(props) {
             <TextInput
               keyboardType="default"
               placeholder="Type your journal entry here..."
+              placeholderTextColor={color.inactive}
               multiline={true}
               style={{
                 fontSize: 20,
                 width: "100%",
                 height: "100%",
+                color: color.primaryText
               }}
               value={body}
               onChangeText={setBody}

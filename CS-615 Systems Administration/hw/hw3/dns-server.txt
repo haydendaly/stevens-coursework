@@ -1,0 +1,184 @@
+### Just the SSH connection
+
+No.     Time           Source                Destination           Protocol Length Info
+     20 3.756573       10.10.0.46            142.93.130.30         SSHv2    129    Server: Protocol (SSH-2.0-OpenSSH_8.4 NetBSD_Secure_Shell-20201204-hpn13v14-lpk)
+
+Frame 20: 129 bytes on wire (1032 bits), 129 bytes captured (1032 bits)
+Ethernet II, Src: 06:97:68:3f:7f:39 (06:97:68:3f:7f:39), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 4, Src: 10.10.0.46, Dst: 142.93.130.30
+Transmission Control Protocol, Src Port: 22, Dst Port: 46586, Seq: 1, Ack: 1, Len: 63
+SSH Protocol
+
+### Client Query for www.darpa.mil AAAA Record
+
+No.     Time           Source                Destination           Protocol Length Info
+     21 3.787077       54.174.105.90         10.10.0.46            DNS      73     Standard query 0x74b0 AAAA www.darpa.mil
+
+Frame 21: 73 bytes on wire (584 bits), 73 bytes captured (584 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:97:68:3f:7f:39 (06:97:68:3f:7f:39)
+Internet Protocol Version 4, Src: 54.174.105.90, Dst: 10.10.0.46
+User Datagram Protocol, Src Port: 65480, Dst Port: 53
+Domain Name System (query)
+
+### Client Query for www.darpa.mil AAAA Record
+
+No.     Time           Source                Destination           Protocol Length Info
+     22 3.787232       10.10.0.46            85.214.73.63          DNS      73     Standard query 0xe9d7 AAAA www.darpa.mil
+
+Frame 22: 73 bytes on wire (584 bits), 73 bytes captured (584 bits)
+Ethernet II, Src: 06:97:68:3f:7f:39 (06:97:68:3f:7f:39), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 4, Src: 10.10.0.46, Dst: 85.214.73.63
+User Datagram Protocol, Src Port: 49293, Dst Port: 53
+Domain Name System (query)
+
+### Client Query for www.darpa.mil AAAA Record
+
+No.     Time           Source                Destination           Protocol Length Info
+     23 3.787245       10.10.0.46            208.67.222.222        DNS      73     Standard query 0xe9d7 AAAA www.darpa.mil
+
+Frame 23: 73 bytes on wire (584 bits), 73 bytes captured (584 bits)
+Ethernet II, Src: 06:97:68:3f:7f:39 (06:97:68:3f:7f:39), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 4, Src: 10.10.0.46, Dst: 208.67.222.222
+User Datagram Protocol, Src Port: 49293, Dst Port: 53
+Domain Name System (query)
+
+### Client Query for www.darpa.mil AAAA Record
+
+No.     Time           Source                Destination           Protocol Length Info
+     24 3.787255       10.10.0.46            62.141.58.13          DNS      73     Standard query 0xe9d7 AAAA www.darpa.mil
+
+Frame 24: 73 bytes on wire (584 bits), 73 bytes captured (584 bits)
+Ethernet II, Src: 06:97:68:3f:7f:39 (06:97:68:3f:7f:39), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 4, Src: 10.10.0.46, Dst: 62.141.58.13
+User Datagram Protocol, Src Port: 49293, Dst Port: 53
+Domain Name System (query)
+
+### My Connection to the Instance over Port 22
+
+No.     Time           Source                Destination           Protocol Length Info
+     25 3.840108       142.93.130.30         10.10.0.46            TCP      66     46586 → 22 [ACK] Seq=1 Ack=64 Win=64256 Len=0 TSval=1363207347 TSecr=2
+
+Frame 25: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:97:68:3f:7f:39 (06:97:68:3f:7f:39)
+Internet Protocol Version 4, Src: 142.93.130.30, Dst: 10.10.0.46
+Transmission Control Protocol, Src Port: 46586, Dst Port: 22, Seq: 1, Ack: 64, Len: 0
+
+### My Connection to the Instance over Port 22
+
+No.     Time           Source                Destination           Protocol Length Info
+     26 3.840120       142.93.130.30         10.10.0.46            SSHv2    87     Client: Protocol (SSH-2.0-libssh-0.6.3)
+
+Frame 26: 87 bytes on wire (696 bits), 87 bytes captured (696 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:97:68:3f:7f:39 (06:97:68:3f:7f:39)
+Internet Protocol Version 4, Src: 142.93.130.30, Dst: 10.10.0.46
+Transmission Control Protocol, Src Port: 46586, Dst Port: 22, Seq: 1, Ack: 64, Len: 21
+SSH Protocol
+
+### My Connection to the Instance over Port 22
+
+No.     Time           Source                Destination           Protocol Length Info
+     27 3.842518       10.10.0.46            142.93.130.30         SSHv2    1122   Server: Key Exchange Init
+
+Frame 27: 1122 bytes on wire (8976 bits), 1122 bytes captured (8976 bits)
+Ethernet II, Src: 06:97:68:3f:7f:39 (06:97:68:3f:7f:39), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 4, Src: 10.10.0.46, Dst: 142.93.130.30
+Transmission Control Protocol, Src Port: 22, Dst Port: 46586, Seq: 64, Ack: 22, Len: 1056
+SSH Protocol
+
+### Resolver querying e12929.dscb.akamaiedge.net for DNS record
+
+No.     Time           Source                Destination           Protocol Length Info
+     28 3.864685       208.67.222.222        10.10.0.46            DNS      205    Standard query response 0xe9d7 AAAA www.darpa.mil CNAME www.darpa.mil.edgekey.net CNAME e12929.dscb.akamaiedge.net AAAA 2600:1408:8400:588::3281 AAAA 2600:1408:8400:58a::3281
+
+Frame 28: 205 bytes on wire (1640 bits), 205 bytes captured (1640 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:97:68:3f:7f:39 (06:97:68:3f:7f:39)
+Internet Protocol Version 4, Src: 208.67.222.222, Dst: 10.10.0.46
+User Datagram Protocol, Src Port: 53, Dst Port: 49293
+Domain Name System (response)
+
+### Resolver querying e12929.dscb.akamaiedge.net for DNS record
+
+No.     Time           Source                Destination           Protocol Length Info
+     29 3.864758       10.10.0.46            54.174.105.90         DNS      205    Standard query response 0x74b0 AAAA www.darpa.mil CNAME www.darpa.mil.edgekey.net CNAME e12929.dscb.akamaiedge.net AAAA 2600:1408:8400:588::3281 AAAA 2600:1408:8400:58a::3281
+
+Frame 29: 205 bytes on wire (1640 bits), 205 bytes captured (1640 bits)
+Ethernet II, Src: 06:97:68:3f:7f:39 (06:97:68:3f:7f:39), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 4, Src: 10.10.0.46, Dst: 54.174.105.90
+User Datagram Protocol, Src Port: 53, Dst Port: 65480
+Domain Name System (response)
+
+### A record query for www.darpa.mil
+
+No.     Time           Source                Destination           Protocol Length Info
+     30 3.865322       54.174.105.90         10.10.0.46            DNS      73     Standard query 0xd110 A www.darpa.mil
+
+Frame 30: 73 bytes on wire (584 bits), 73 bytes captured (584 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:97:68:3f:7f:39 (06:97:68:3f:7f:39)
+Internet Protocol Version 4, Src: 54.174.105.90, Dst: 10.10.0.46
+User Datagram Protocol, Src Port: 65479, Dst Port: 53
+Domain Name System (query)
+
+### A record query for www.darpa.mil
+
+No.     Time           Source                Destination           Protocol Length Info
+     31 3.865418       10.10.0.46            208.67.222.222        DNS      73     Standard query 0x0191 A www.darpa.mil
+
+Frame 31: 73 bytes on wire (584 bits), 73 bytes captured (584 bits)
+Ethernet II, Src: 06:97:68:3f:7f:39 (06:97:68:3f:7f:39), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 4, Src: 10.10.0.46, Dst: 208.67.222.222
+User Datagram Protocol, Src Port: 48294, Dst Port: 53
+Domain Name System (query)
+
+### CNAME Response
+
+No.     Time           Source                Destination           Protocol Length Info
+     32 3.867378       208.67.222.222        10.10.0.46            DNS      165    Standard query response 0x0191 A www.darpa.mil CNAME www.darpa.mil.edgekey.net CNAME e12929.dscb.akamaiedge.net A 69.192.191.143
+
+Frame 32: 165 bytes on wire (1320 bits), 165 bytes captured (1320 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:97:68:3f:7f:39 (06:97:68:3f:7f:39)
+Internet Protocol Version 4, Src: 208.67.222.222, Dst: 10.10.0.46
+User Datagram Protocol, Src Port: 53, Dst Port: 48294
+Domain Name System (response)
+
+### CNAME Response
+
+No.     Time           Source                Destination           Protocol Length Info
+     33 3.867416       10.10.0.46            54.174.105.90         DNS      165    Standard query response 0xd110 A www.darpa.mil CNAME www.darpa.mil.edgekey.net CNAME e12929.dscb.akamaiedge.net A 69.192.191.143
+
+Frame 33: 165 bytes on wire (1320 bits), 165 bytes captured (1320 bits)
+Ethernet II, Src: 06:97:68:3f:7f:39 (06:97:68:3f:7f:39), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 4, Src: 10.10.0.46, Dst: 54.174.105.90
+User Datagram Protocol, Src Port: 53, Dst Port: 65479
+Domain Name System (response)
+
+### Diffie-Hellman Exchange Client
+
+No.     Time           Source                Destination           Protocol Length Info
+     39 4.204538       142.93.130.30         10.10.0.46            SSHv2    114    Client: Elliptic Curve Diffie-Hellman Key Exchange Init
+
+Frame 39: 114 bytes on wire (912 bits), 114 bytes captured (912 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:97:68:3f:7f:39 (06:97:68:3f:7f:39)
+Internet Protocol Version 4, Src: 142.93.130.30, Dst: 10.10.0.46
+Transmission Control Protocol, Src Port: 46586, Dst Port: 22, Seq: 462, Ack: 1120, Len: 48
+SSH Protocol
+
+### Diffie-Hellman Exchange Server
+
+No.     Time           Source                Destination           Protocol Length Info
+     40 4.214937       10.10.0.46            142.93.130.30         SSHv2    946    Server: Elliptic Curve Diffie-Hellman Key Exchange Reply, New Keys
+
+Frame 40: 946 bytes on wire (7568 bits), 946 bytes captured (7568 bits)
+Ethernet II, Src: 06:97:68:3f:7f:39 (06:97:68:3f:7f:39), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 4, Src: 10.10.0.46, Dst: 142.93.130.30
+Transmission Control Protocol, Src Port: 22, Dst Port: 46586, Seq: 1120, Ack: 510, Len: 880
+SSH Protocol
+
+### IPv6 Router Advertisement
+
+No.     Time           Source                Destination           Protocol Length Info
+     53 9.215148       fe80::45b:8ff:fe4d:360f ff02::1               ICMPv6   110    Router Advertisement from 06:5b:08:4d:36:0f
+
+Frame 53: 110 bytes on wire (880 bits), 110 bytes captured (880 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: IPv6mcast_01 (33:33:00:00:00:01)
+Internet Protocol Version 6, Src: fe80::45b:8ff:fe4d:360f, Dst: ff02::1
+Internet Control Message Protocol v6

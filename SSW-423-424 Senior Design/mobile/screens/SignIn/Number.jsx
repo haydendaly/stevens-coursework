@@ -42,7 +42,7 @@ export default function Number(props) {
                     placeholder="(123)-456-7890"
                     placeholderTextColor={color.inactive}
                     keyboardType="phone-pad"
-                    style={{ fontSize: 20 }}
+                    style={{ fontSize: 20, padding: 20, paddingBottom: 15, paddingTop: 15, borderWidth: 1, borderRadius: 20, borderColor: color.primaryText }}
                     onChangeText={setNumber}
                 />
                 <TouchableOpacity

@@ -1,0 +1,58 @@
+# Visual Traceroute
+
+## Visualizations
+
+To visualize the traceroute, I used https://gsuite.tools/traceroute.
+For IPv6 IPs, I used https://www.ipaddressguide.com/traceroute6.
+
+### 155.246.56.11 / www.cs.stevens-tech.edu
+
+This starts off in London, then goes to Helsinki, then Stockholm, jumps across the ocean to Paterson, NJ, and finishes in Sparta, NJ.
+
+## 206.195.187.229 / www.honolulu.gov
+
+This starts off in London, goes to Helsinki, then across the ocean to Kansas, then to Kahului, then to Los Angeles, and then finally back to Honolulu.
+
+## 190.64.134.53 / r190-64-134-53.su-static.adinet.com.uy
+
+This starts off in London, jumps over the ocean to Kansas, goes up to Seattle, and then jumps around Uruguay.
+
+### 2001:608:0:dff::2 / ntp4.space.net
+
+This starts in the UK and then jumps straight to Germany.
+
+### 196.10.52.57 / ntp1.inx.net.za
+
+This starts in London, jumps to Finland, jumps to South Africa and moves around there.
+
+### 144.48.166.166 / cosima.470n.act.tsgnl.co
+
+This starts in London, then goes across the ocean to Kansas, then jumps to Brisbane, Australia, then jumps to Canberra, Australia.
+
+### 144.76.76.107 / sv1.ggsrv.de
+
+This starts in London and jumps straight to Kassel, Germany.
+
+### 211.233.84.186 / dadns.cdnetworks.co.kr
+
+This starts in London, jumps to Kansas, and then jumps to South Korea.
+
+## Questions
+
+### How does this differ from traceroutes run from your laptop?
+
+The primary difference is the starting location. On my local machine, the traceroutes start in NJ, on my EC2 instance, they start in Virginia, and on this visualizer tool, they start in London. Since the visualized ones are from Europe, all of them jump over the sea when the ones from my local machine that stay in the United States have less jumping.
+
+### Can you identify major peering points and tier-1 operators?
+
+Majority of the US tasks went through Optimum in Kansas, CenturyLink in Finland, and Stockholm, Switzerland. The
+
+### How many ASes do the traces pass through?
+
+I wrote a script for this in Support/asn_count.py. Unfortunately, the library I was using wasn't working properly to parse the asns from the probes so I just counted the most common IP addresses. The top 5 are below.
+
+66.109.5.228: 9
+52.93.29.9: 6
+200.40.177.197: 6
+168.209.100.213: 6
+206.195.188.253: 5

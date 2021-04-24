@@ -2,13 +2,13 @@ import { useColor } from '../functions/providers/ColorContext';
 import { mountReactHook } from './mockHook';
 import { waitFor, act } from '@testing-library/react-native';
 
-const original = {
-    primary: '#ffffff',
-    primaryText: '#555555',
-    highlight: '#000099',
-    inactive: '#999999',
-    background: '#89F1FF',
-    shadow: '#aaa'
+const green = {
+    primary: "#ffffff",
+    primaryText: "#465448",
+    highlight: "#004509",
+    inactive: "#687c6b",
+    background: "#9fd984",
+    shadow: "#444"
 };
 
 const colorSchemes = [
@@ -34,7 +34,7 @@ describe('Color Tests', () => {
     });
 
     it('Has initial color', async () => {
-        expect(hook.color).toEqual(original);
+        expect(hook.color).toEqual(green);
     });
 
     it('Has color schemes', async () => {

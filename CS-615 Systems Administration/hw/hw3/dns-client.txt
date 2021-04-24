@@ -1,0 +1,483 @@
+### TCP connection
+
+No.     Time           Source                Destination           Protocol Length Info
+     46 7.909989       24.186.241.69         10.10.0.34            TCP      66     57479 → 22 [ACK] Seq=165 Ack=325 Win=2044 Len=0 TSval=714313307 TSecr=228
+
+Frame 46: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:99:96:8b:eb:5b (06:99:96:8b:eb:5b)
+Internet Protocol Version 4, Src: 24.186.241.69, Dst: 10.10.0.34
+Transmission Control Protocol, Src Port: 57479, Dst Port: 22, Seq: 165, Ack: 325, Len: 0
+    Source Port: 57479
+    Destination Port: 22
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence Number: 165    (relative sequence number)
+    Sequence Number (raw): 3240285745
+    [Next Sequence Number: 165    (relative sequence number)]
+    Acknowledgment Number: 325    (relative ack number)
+    Acknowledgment number (raw): 783124710
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x010 (ACK)
+    Window: 2044
+    [Calculated window size: 2044]
+    [Window size scaling factor: -1 (unknown)]
+    Checksum: 0x713d [unverified]
+    [Checksum Status: Unverified]
+    Urgent Pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+    [Timestamps]
+
+### My Connection to the Instance
+
+No.     Time           Source                Destination           Protocol Length Info
+     47 9.261822       24.186.241.69         10.10.0.34            SSH      102    Client: Encrypted packet (len=36)
+
+Frame 47: 102 bytes on wire (816 bits), 102 bytes captured (816 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:99:96:8b:eb:5b (06:99:96:8b:eb:5b)
+Internet Protocol Version 4, Src: 24.186.241.69, Dst: 10.10.0.34
+Transmission Control Protocol, Src Port: 57479, Dst Port: 22, Seq: 165, Ack: 325, Len: 36
+    Source Port: 57479
+    Destination Port: 22
+    [Stream index: 0]
+    [TCP Segment Len: 36]
+    Sequence Number: 165    (relative sequence number)
+    Sequence Number (raw): 3240285745
+    [Next Sequence Number: 201    (relative sequence number)]
+    Acknowledgment Number: 325    (relative ack number)
+    Acknowledgment number (raw): 783124710
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x018 (PSH, ACK)
+    Window: 2048
+    [Calculated window size: 2048]
+    [Window size scaling factor: -1 (unknown)]
+    Checksum: 0xde64 [unverified]
+    [Checksum Status: Unverified]
+    Urgent Pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+    [Timestamps]
+    TCP payload (36 bytes)
+SSH Protocol
+    Packet Length (encrypted): 9fc32072
+    Encrypted Packet: 9f74ec27687cb9b814a05057c34c12c9bdb332c52375adf82b5a83484ee024ef
+    [Direction: client-to-server]
+
+### My Connection to the Instance
+
+No.     Time           Source                Destination           Protocol Length Info
+     48 9.262406       10.10.0.34            24.186.241.69         SSH      102    Server: Encrypted packet (len=36)
+
+Frame 48: 102 bytes on wire (816 bits), 102 bytes captured (816 bits)
+Ethernet II, Src: 06:99:96:8b:eb:5b (06:99:96:8b:eb:5b), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 4, Src: 10.10.0.34, Dst: 24.186.241.69
+Transmission Control Protocol, Src Port: 22, Dst Port: 57479, Seq: 325, Ack: 201, Len: 36
+    Source Port: 22
+    Destination Port: 57479
+    [Stream index: 0]
+    [TCP Segment Len: 36]
+    Sequence Number: 325    (relative sequence number)
+    Sequence Number (raw): 783124710
+    [Next Sequence Number: 361    (relative sequence number)]
+    Acknowledgment Number: 201    (relative ack number)
+    Acknowledgment number (raw): 3240285781
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x018 (PSH, ACK)
+    Window: 4197
+    [Calculated window size: 4197]
+    [Window size scaling factor: -1 (unknown)]
+    Checksum: 0xd1c1 [unverified]
+    [Checksum Status: Unverified]
+    Urgent Pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+    [Timestamps]
+    TCP payload (36 bytes)
+SSH Protocol
+    Packet Length (encrypted): 562e2e82
+    Encrypted Packet: 2d2aaa9c8c8618b889ca74b301ad8db26b9fae5831f10517452d088a1a004939
+    [Direction: server-to-client]
+
+### DNS Query for AAAA
+
+No.     Time           Source                Destination           Protocol Length Info
+     49 9.272257       10.10.0.34            100.25.152.80         DNS      73     Standard query 0x74b0 AAAA www.darpa.mil
+
+Frame 49: 73 bytes on wire (584 bits), 73 bytes captured (584 bits)
+Ethernet II, Src: 06:99:96:8b:eb:5b (06:99:96:8b:eb:5b), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 4, Src: 10.10.0.34, Dst: 100.25.152.80
+User Datagram Protocol, Src Port: 65480, Dst Port: 53
+Domain Name System (query)
+
+### DNS Query to my DNS Server
+
+No.     Time           Source                Destination           Protocol Length Info
+     50 9.285699       24.186.241.69         10.10.0.34            TCP      66     57479 → 22 [ACK] Seq=201 Ack=361 Win=2047 Len=0 TSval=714314675 TSecr=231
+
+Frame 50: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:99:96:8b:eb:5b (06:99:96:8b:eb:5b)
+Internet Protocol Version 4, Src: 24.186.241.69, Dst: 10.10.0.34
+Transmission Control Protocol, Src Port: 57479, Dst Port: 22, Seq: 201, Ack: 361, Len: 0
+    Source Port: 57479
+    Destination Port: 22
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence Number: 201    (relative sequence number)
+    Sequence Number (raw): 3240285781
+    [Next Sequence Number: 201    (relative sequence number)]
+    Acknowledgment Number: 361    (relative ack number)
+    Acknowledgment number (raw): 783124746
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x010 (ACK)
+    Window: 2047
+    [Calculated window size: 2047]
+    [Window size scaling factor: -1 (unknown)]
+    Checksum: 0x6b97 [unverified]
+    [Checksum Status: Unverified]
+    Urgent Pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+    [Timestamps]
+
+### Query for AAAA Record and CNAME
+
+No.     Time           Source                Destination           Protocol Length Info
+     51 9.350401       100.25.152.80         10.10.0.34            DNS      205    Standard query response 0x74b0 AAAA www.darpa.mil CNAME www.darpa.mil.edgekey.net CNAME e12929.dscb.akamaiedge.net AAAA 2600:1408:8400:588::3281 AAAA 2600:1408:8400:58a::3281
+
+Frame 51: 205 bytes on wire (1640 bits), 205 bytes captured (1640 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:99:96:8b:eb:5b (06:99:96:8b:eb:5b)
+Internet Protocol Version 4, Src: 100.25.152.80, Dst: 10.10.0.34
+User Datagram Protocol, Src Port: 53, Dst Port: 65480
+Domain Name System (response)
+
+### Query for A Record
+
+No.     Time           Source                Destination           Protocol Length Info
+     52 9.350532       10.10.0.34            100.25.152.80         DNS      73     Standard query 0xd110 A www.darpa.mil
+
+Frame 52: 73 bytes on wire (584 bits), 73 bytes captured (584 bits)
+Ethernet II, Src: 06:99:96:8b:eb:5b (06:99:96:8b:eb:5b), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 4, Src: 10.10.0.34, Dst: 100.25.152.80
+User Datagram Protocol, Src Port: 65479, Dst Port: 53
+Domain Name System (query)
+
+### Query for CNAME and A
+
+No.     Time           Source                Destination           Protocol Length Info
+     53 9.353066       100.25.152.80         10.10.0.34            DNS      165    Standard query response 0xd110 A www.darpa.mil CNAME www.darpa.mil.edgekey.net CNAME e12929.dscb.akamaiedge.net A 69.192.191.143
+
+Frame 53: 165 bytes on wire (1320 bits), 165 bytes captured (1320 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:99:96:8b:eb:5b (06:99:96:8b:eb:5b)
+Internet Protocol Version 4, Src: 100.25.152.80, Dst: 10.10.0.34
+User Datagram Protocol, Src Port: 53, Dst Port: 65479
+Domain Name System (response)
+
+### HTTPS Request over 443
+
+No.     Time           Source                Destination           Protocol Length Info
+     54 9.353180       2600:1f18:94f:2600:582f:4489:8121:d398 2600:1408:8400:588::3281 TCP      94     65535 → 443 [SYN] Seq=0 Win=32768 Len=0 MSS=1440 WS=8 SACK_PERM=1 TSval=1 TSecr=0
+
+Frame 54: 94 bytes on wire (752 bits), 94 bytes captured (752 bits)
+Ethernet II, Src: 06:99:96:8b:eb:5b (06:99:96:8b:eb:5b), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 6, Src: 2600:1f18:94f:2600:582f:4489:8121:d398, Dst: 2600:1408:8400:588::3281
+Transmission Control Protocol, Src Port: 65535, Dst Port: 443, Seq: 0, Len: 0
+    Source Port: 65535
+    Destination Port: 443
+    [Stream index: 3]
+    [TCP Segment Len: 0]
+    Sequence Number: 0    (relative sequence number)
+    Sequence Number (raw): 466479757
+    [Next Sequence Number: 1    (relative sequence number)]
+    Acknowledgment Number: 0
+    Acknowledgment number (raw): 0
+    1010 .... = Header Length: 40 bytes (10)
+    Flags: 0x002 (SYN)
+    Window: 32768
+    [Calculated window size: 32768]
+    Checksum: 0x6415 [unverified]
+    [Checksum Status: Unverified]
+    Urgent Pointer: 0
+    Options: (20 bytes), Maximum segment size, No-Operation (NOP), Window scale, SACK permitted, Timestamps
+    [Timestamps]
+
+### HTTPS Request over 443
+
+No.     Time           Source                Destination           Protocol Length Info
+     55 9.354750       2600:1408:8400:588::3281 2600:1f18:94f:2600:582f:4489:8121:d398 TCP      94     443 → 65535 [SYN, ACK] Seq=0 Ack=1 Win=64260 Len=0 MSS=1440 SACK_PERM=1 TSval=110700340 TSecr=1 WS=128
+
+Frame 55: 94 bytes on wire (752 bits), 94 bytes captured (752 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:99:96:8b:eb:5b (06:99:96:8b:eb:5b)
+Internet Protocol Version 6, Src: 2600:1408:8400:588::3281, Dst: 2600:1f18:94f:2600:582f:4489:8121:d398
+Transmission Control Protocol, Src Port: 443, Dst Port: 65535, Seq: 0, Ack: 1, Len: 0
+    Source Port: 443
+    Destination Port: 65535
+    [Stream index: 3]
+    [TCP Segment Len: 0]
+    Sequence Number: 0    (relative sequence number)
+    Sequence Number (raw): 280518535
+    [Next Sequence Number: 1    (relative sequence number)]
+    Acknowledgment Number: 1    (relative ack number)
+    Acknowledgment number (raw): 466479758
+    1010 .... = Header Length: 40 bytes (10)
+    Flags: 0x012 (SYN, ACK)
+    Window: 64260
+    [Calculated window size: 64260]
+    Checksum: 0x4aef [unverified]
+    [Checksum Status: Unverified]
+    Urgent Pointer: 0
+    Options: (20 bytes), Maximum segment size, SACK permitted, Timestamps, No-Operation (NOP), Window scale
+    [SEQ/ACK analysis]
+    [Timestamps]
+
+### HTTPS Request over 443 over TCP
+
+No.     Time           Source                Destination           Protocol Length Info
+     56 9.354772       2600:1f18:94f:2600:582f:4489:8121:d398 2600:1408:8400:588::3281 TCP      86     65535 → 443 [ACK] Seq=1 Ack=1 Win=33120 Len=0 TSval=1 TSecr=110700340
+
+Frame 56: 86 bytes on wire (688 bits), 86 bytes captured (688 bits)
+Ethernet II, Src: 06:99:96:8b:eb:5b (06:99:96:8b:eb:5b), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 6, Src: 2600:1f18:94f:2600:582f:4489:8121:d398, Dst: 2600:1408:8400:588::3281
+Transmission Control Protocol, Src Port: 65535, Dst Port: 443, Seq: 1, Ack: 1, Len: 0
+    Source Port: 65535
+    Destination Port: 443
+    [Stream index: 3]
+    [TCP Segment Len: 0]
+    Sequence Number: 1    (relative sequence number)
+    Sequence Number (raw): 466479758
+    [Next Sequence Number: 1    (relative sequence number)]
+    Acknowledgment Number: 1    (relative ack number)
+    Acknowledgment number (raw): 280518536
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x010 (ACK)
+    Window: 4140
+    [Calculated window size: 33120]
+    [Window size scaling factor: 8]
+    Checksum: 0x6480 [unverified]
+    [Checksum Status: Unverified]
+    Urgent Pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+    [Timestamps]
+
+### HTTPS Response over TLS
+
+No.     Time           Source                Destination           Protocol Length Info
+     57 9.369381       2600:1f18:94f:2600:582f:4489:8121:d398 2600:1408:8400:588::3281 TLSv1.3  401    Client Hello
+
+Frame 57: 401 bytes on wire (3208 bits), 401 bytes captured (3208 bits)
+Ethernet II, Src: 06:99:96:8b:eb:5b (06:99:96:8b:eb:5b), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 6, Src: 2600:1f18:94f:2600:582f:4489:8121:d398, Dst: 2600:1408:8400:588::3281
+Transmission Control Protocol, Src Port: 65535, Dst Port: 443, Seq: 1, Ack: 1, Len: 315
+    Source Port: 65535
+    Destination Port: 443
+    [Stream index: 3]
+    [TCP Segment Len: 315]
+    Sequence Number: 1    (relative sequence number)
+    Sequence Number (raw): 466479758
+    [Next Sequence Number: 316    (relative sequence number)]
+    Acknowledgment Number: 1    (relative ack number)
+    Acknowledgment number (raw): 280518536
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x018 (PSH, ACK)
+    Window: 4140
+    [Calculated window size: 33120]
+    [Window size scaling factor: 8]
+    Checksum: 0xae64 [unverified]
+    [Checksum Status: Unverified]
+    Urgent Pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+    [Timestamps]
+    TCP payload (315 bytes)
+Transport Layer Security
+
+### HTTPS Response over TLS
+
+No.     Time           Source                Destination           Protocol Length Info
+     58 9.370962       2600:1408:8400:588::3281 2600:1f18:94f:2600:582f:4489:8121:d398 TCP      86     443 → 65535 [ACK] Seq=1 Ack=316 Win=64128 Len=0 TSval=110700356 TSecr=1
+
+Frame 58: 86 bytes on wire (688 bits), 86 bytes captured (688 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:99:96:8b:eb:5b (06:99:96:8b:eb:5b)
+Internet Protocol Version 6, Src: 2600:1408:8400:588::3281, Dst: 2600:1f18:94f:2600:582f:4489:8121:d398
+Transmission Control Protocol, Src Port: 443, Dst Port: 65535, Seq: 1, Ack: 316, Len: 0
+    Source Port: 443
+    Destination Port: 65535
+    [Stream index: 3]
+    [TCP Segment Len: 0]
+    Sequence Number: 1    (relative sequence number)
+    Sequence Number (raw): 280518536
+    [Next Sequence Number: 1    (relative sequence number)]
+    Acknowledgment Number: 316    (relative ack number)
+    Acknowledgment number (raw): 466480073
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x010 (ACK)
+    Window: 501
+    [Calculated window size: 64128]
+    [Window size scaling factor: 128]
+    Checksum: 0x716c [unverified]
+    [Checksum Status: Unverified]
+    Urgent Pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+    [Timestamps]
+
+### HTTPS Application Data
+
+No.     Time           Source                Destination           Protocol Length Info
+     59 9.374092       2600:1408:8400:588::3281 2600:1f18:94f:2600:582f:4489:8121:d398 TLSv1.3  1514   Server Hello, Change Cipher Spec, Application Data
+
+Frame 59: 1514 bytes on wire (12112 bits), 1514 bytes captured (12112 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:99:96:8b:eb:5b (06:99:96:8b:eb:5b)
+Internet Protocol Version 6, Src: 2600:1408:8400:588::3281, Dst: 2600:1f18:94f:2600:582f:4489:8121:d398
+Transmission Control Protocol, Src Port: 443, Dst Port: 65535, Seq: 1, Ack: 316, Len: 1428
+    Source Port: 443
+    Destination Port: 65535
+    [Stream index: 3]
+    [TCP Segment Len: 1428]
+    Sequence Number: 1    (relative sequence number)
+    Sequence Number (raw): 280518536
+    [Next Sequence Number: 1429    (relative sequence number)]
+    Acknowledgment Number: 316    (relative ack number)
+    Acknowledgment number (raw): 466480073
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x010 (ACK)
+    Window: 501
+    [Calculated window size: 64128]
+    [Window size scaling factor: 128]
+    Checksum: 0x13fa [unverified]
+    [Checksum Status: Unverified]
+    Urgent Pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+    [Timestamps]
+    TCP payload (1428 bytes)
+    TCP segment data (1253 bytes)
+Transport Layer Security
+
+### HTTPS Application Data
+
+No.     Time           Source                Destination           Protocol Length Info
+     60 9.374100       2600:1408:8400:588::3281 2600:1f18:94f:2600:582f:4489:8121:d398 TCP      1514   443 → 65535 [PSH, ACK] Seq=1429 Ack=316 Win=64128 Len=1428 TSval=110700359 TSecr=1 [TCP segment of a reassembled PDU]
+
+Frame 60: 1514 bytes on wire (12112 bits), 1514 bytes captured (12112 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:99:96:8b:eb:5b (06:99:96:8b:eb:5b)
+Internet Protocol Version 6, Src: 2600:1408:8400:588::3281, Dst: 2600:1f18:94f:2600:582f:4489:8121:d398
+Transmission Control Protocol, Src Port: 443, Dst Port: 65535, Seq: 1429, Ack: 316, Len: 1428
+    Source Port: 443
+    Destination Port: 65535
+    [Stream index: 3]
+    [TCP Segment Len: 1428]
+    Sequence Number: 1429    (relative sequence number)
+    Sequence Number (raw): 280519964
+    [Next Sequence Number: 2857    (relative sequence number)]
+    Acknowledgment Number: 316    (relative ack number)
+    Acknowledgment number (raw): 466480073
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x018 (PSH, ACK)
+    Window: 501
+    [Calculated window size: 64128]
+    [Window size scaling factor: 128]
+    Checksum: 0x3553 [unverified]
+    [Checksum Status: Unverified]
+    Urgent Pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+    [Timestamps]
+    TCP payload (1428 bytes)
+    [Reassembled PDU in frame: 61]
+    TCP segment data (1428 bytes)
+
+### HTTPS Application Data
+
+No.     Time           Source                Destination           Protocol Length Info
+     61 9.374105       2600:1408:8400:588::3281 2600:1f18:94f:2600:582f:4489:8121:d398 TLSv1.3  736    Application Data, Application Data, Application Data
+
+Frame 61: 736 bytes on wire (5888 bits), 736 bytes captured (5888 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:99:96:8b:eb:5b (06:99:96:8b:eb:5b)
+Internet Protocol Version 6, Src: 2600:1408:8400:588::3281, Dst: 2600:1f18:94f:2600:582f:4489:8121:d398
+Transmission Control Protocol, Src Port: 443, Dst Port: 65535, Seq: 2857, Ack: 316, Len: 650
+    Source Port: 443
+    Destination Port: 65535
+    [Stream index: 3]
+    [TCP Segment Len: 650]
+    Sequence Number: 2857    (relative sequence number)
+    Sequence Number (raw): 280521392
+    [Next Sequence Number: 3507    (relative sequence number)]
+    Acknowledgment Number: 316    (relative ack number)
+    Acknowledgment number (raw): 466480073
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x018 (PSH, ACK)
+    Window: 501
+    [Calculated window size: 64128]
+    [Window size scaling factor: 128]
+    Checksum: 0xaf72 [unverified]
+    [Checksum Status: Unverified]
+    Urgent Pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+    [Timestamps]
+    TCP payload (650 bytes)
+    TCP segment data (290 bytes)
+[3 Reassembled TCP Segments (2971 bytes): #59(1253), #60(1428), #61(290)]
+Transport Layer Security
+Transport Layer Security
+
+### HTTPS Application Data
+
+No.     Time           Source                Destination           Protocol Length Info
+     62 9.374123       2600:1f18:94f:2600:582f:4489:8121:d398 2600:1408:8400:588::3281 TCP      86     65535 → 443 [ACK] Seq=316 Ack=2857 Win=30264 Len=0 TSval=1 TSecr=110700359
+
+Frame 62: 86 bytes on wire (688 bits), 86 bytes captured (688 bits)
+Ethernet II, Src: 06:99:96:8b:eb:5b (06:99:96:8b:eb:5b), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 6, Src: 2600:1f18:94f:2600:582f:4489:8121:d398, Dst: 2600:1408:8400:588::3281
+Transmission Control Protocol, Src Port: 65535, Dst Port: 443, Seq: 316, Ack: 2857, Len: 0
+    Source Port: 65535
+    Destination Port: 443
+    [Stream index: 3]
+    [TCP Segment Len: 0]
+    Sequence Number: 316    (relative sequence number)
+    Sequence Number (raw): 466480073
+    [Next Sequence Number: 316    (relative sequence number)]
+    Acknowledgment Number: 2857    (relative ack number)
+    Acknowledgment number (raw): 280521392
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x010 (ACK)
+    Window: 3783
+    [Calculated window size: 30264]
+    [Window size scaling factor: 8]
+    Checksum: 0x596f [unverified]
+    [Checksum Status: Unverified]
+    Urgent Pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+    [Timestamps]
+
+### Closing Request
+
+No.     Time           Source                Destination           Protocol Length Info
+     63 9.374432       2600:1f18:94f:2600:582f:4489:8121:d398 2600:1408:8400:588::3281 TCP      86     65535 → 443 [ACK] Seq=316 Ack=3507 Win=32760 Len=0 TSval=1 TSecr=110700360
+
+Frame 63: 86 bytes on wire (688 bits), 86 bytes captured (688 bits)
+Ethernet II, Src: 06:99:96:8b:eb:5b (06:99:96:8b:eb:5b), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 6, Src: 2600:1f18:94f:2600:582f:4489:8121:d398, Dst: 2600:1408:8400:588::3281
+Transmission Control Protocol, Src Port: 65535, Dst Port: 443, Seq: 316, Ack: 3507, Len: 0
+    Source Port: 65535
+    Destination Port: 443
+    [Stream index: 3]
+    [TCP Segment Len: 0]
+    Sequence Number: 316    (relative sequence number)
+    Sequence Number (raw): 466480073
+    [Next Sequence Number: 316    (relative sequence number)]
+    Acknowledgment Number: 3507    (relative ack number)
+    Acknowledgment number (raw): 280522042
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x010 (ACK)
+    Window: 4095
+    [Calculated window size: 32760]
+    [Window size scaling factor: 8]
+    Checksum: 0x55ac [unverified]
+    [Checksum Status: Unverified]
+    Urgent Pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+    [Timestamps]

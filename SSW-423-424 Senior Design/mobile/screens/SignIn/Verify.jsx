@@ -30,7 +30,7 @@ export default function Number(props) {
           createUser();
         }
         AsyncStorage.setItem("loggedIn", "true");
-        navigation.navigate("Onboarding");
+        navigation.navigate("HomeStack");
       })
     }
   }, [code]);
@@ -46,7 +46,7 @@ export default function Number(props) {
           placeholder="123456"
           placeholderTextColor={color.inactive}
           keyboardType="number-pad"
-          style={{ fontSize: 20 }}
+          style={{ fontSize: 20, padding: 20, paddingBottom: 15, paddingTop: 15, borderWidth: 1, borderRadius: 20, borderColor: color.primaryText }}
           onChangeText={setCode}
         />
         <TouchableOpacity

@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Text, TouchableOpacity, FlatList, View, Button } from 'react-native';
 import { FontAwesome5 as FA5Icon } from '@expo/vector-icons/';
+import { FontAwesome as Icon } from "@expo/vector-icons/";
 import { TextInput } from 'react-native-gesture-handler';
 
 import { ColorContext } from '../../functions/providers/ColorContext';
@@ -25,8 +26,14 @@ function Entry(props) {
         }
     ];
 
-    style.push(styles.entryTop);
-    style.push(styles.entryBottom);
+    if (props.style === 'top') {
+        style.push(styles.entryTop);
+    } else if (props.style === 'bottom') {
+        style.push({ ...styles.entryBottom, borderBottomWidth: 0 });
+    } else if (props.style === 'both') {
+        style.push(styles.entryTop);
+        style.push(styles.entryBottom);
+    }
 
     let description;
     if (props.private === true) {
@@ -35,6 +42,11 @@ function Entry(props) {
         description = props.body;
     } else {
         description = props.body.slice(0, 40) + '...';
+    }
+
+    let title = props.title;
+    if (title.length > 40) {
+        title = props.title.slice(0, 40) + '...';
     }
 
     const [isModalVisible, setModalVisible] = useState(false);
@@ -80,14 +92,26 @@ function Entry(props) {
                 style={[style, styles.entryContent]}
             >
                 <View>
-                    <Text
-                        style={{
+                    <View
+                        style={{ flexDirection: 'row' }}
+                    >
+                        <Text style={{
                             ...styles.entryTitle,
                             color: color.primaryText
-                        }}
-                    >
-                        {props.title}
-                    </Text>
+                        }}>
+                            {title}
+                        </Text>
+                        {props.private && 
+                            <View style={{marginLeft: 5}}>
+                                <Icon name="lock" color={color.inactive} size={16} />
+                            </View>
+                        }
+                        {data.starred && 
+                            <View style={{marginLeft: 5}}>
+                                <Icon name="star" color={color.inactive} size={16} />
+                            </View>
+                        }
+                    </View>
                     <Text style={{ color: color.inactive }}>{description}</Text>
                 </View>
                 <FA5Icon
@@ -141,20 +165,51 @@ function Entry(props) {
 
 function JournalList(props) {
     let journals = props.data;
+    journals.sort((a,b) => {
+        if ( dayjs(a.timeCreated).isBefore( dayjs(b.timeCreated) ))   {
+            return 1;
+        }
+        else {
+            return -1;
+        }
+    });
     const { color } = useContext(ColorContext);
+
+    let data = [];
+
+    for (let i = 0; i < journals.length; i++) {
+        if (
+            data.length === 0 ||
+            dayjs(data[data.length - 1][0].timeCreated).format('MMDDYY') !==
+                dayjs(journals[i].timeCreated).format('MMDDYY')
+        ) {
+            data.push([journals[i]]);
+        } else {
+            data[data.length - 1].push(journals[i]);
+        }
+    }
+
+    for (list of data) {
+        if (list.length === 1) {
+            list[0].style = 'both';
+        } else {
+            list[0].style = 'top';
+            list[list.length-1].style = 'bottom';
+        }
+    }
 
     return (
         <>
-            {journals.length === 0 ? (
+            {data.length === 0 ? (
                 <View>
-                    <Text>No journals yet, add one below!</Text>
+                    <Text style={{ color: color.primaryText }}>No journals yet, add one below!</Text>
                 </View>
             ) : (
                 <FlatList
-                    data={journals}
+                    data={data}
                     style={styles.topList}
                     contentContainerStyle={styles.entryList}
-                    keyExtractor={(item) => item.timeCreated + item.id}
+                    keyExtractor={(item) => item[0].timeCreated + item[0].id}
                     renderItem={({ item }) => (
                         <View>
                             <Text
@@ -166,7 +221,7 @@ function JournalList(props) {
                                 }}
                             >
                                 <Text>
-                                    {dayjs(item.timeCreated).format('dddd')}{'    '}
+                                    {dayjs(item[0].timeCreated).format('dddd')}{'  '}
                                 </Text>
                                 <Text
                                     style={{
@@ -174,16 +229,26 @@ function JournalList(props) {
                                         fontSize: 14
                                     }}
                                 >
-                                    {dayjs(item.timeCreated).format('MM/DD/YY')}
+                                    {dayjs(item[0].timeCreated).format('MM/DD/YY')}
                                 </Text>
                             </Text>
-                            <Entry
-                                title={item.title}
-                                body={item.body}
-                                private={item.private}
-                                navigation={props.navigation}
-                                style={item.style}
+                            <FlatList
+                                style={{
+                                    ...generalStyles.shadow,
+                                    shadowColor: color.shadow
+                                }}
                                 data={item}
+                                keyExtractor={(item) => item.id}
+                                renderItem={({ item }) => (
+                                    <Entry
+                                        title={item.title}
+                                        body={item.body}
+                                        private={item.private}
+                                        navigation={props.navigation}
+                                        style={item.style}
+                                        data={item}
+                                    />
+                                )}
                             />
                         </View>
                     )}

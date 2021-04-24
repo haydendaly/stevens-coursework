@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
-import { View, StyleSheet } from "react-native";
+import { View } from "react-native";
 
 import { UserContext } from "../../functions/providers/UserContext";
 import { ColorContext } from "../../functions/providers/ColorContext";
 import { awardsSchemes } from "../../functions/providers/AwardContext";
 import JournalList from "./JournalList";
 import IconButton from "../../components/General/Button";
+import styles from "../../styles/journalTabStyles";
 
 export default function Starred(props) {
   const { navigation } = props;
@@ -37,11 +38,3 @@ export default function Starred(props) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

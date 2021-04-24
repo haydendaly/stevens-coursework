@@ -8,7 +8,6 @@ import Intro from '../screens/SignIn/Intro';
 import Name from '../screens/SignIn/Name';
 import Number from '../screens/SignIn/Number';
 import Verify from '../screens/SignIn/Verify';
-import Onboarding from '../screens/SignIn/Onboarding';
 
 const Stack = createStackNavigator();
 
@@ -49,14 +48,6 @@ const SignIn = () => {
             <Stack.Screen
                 name="Verify"
                 component={Verify}
-                screenOptions={{
-                    headerShown: false,
-                    gestureEnabled: false
-                }}
-            />
-            <Stack.Screen
-                name="Onboarding"
-                component={Onboarding}
                 screenOptions={{
                     headerShown: false,
                     gestureEnabled: false

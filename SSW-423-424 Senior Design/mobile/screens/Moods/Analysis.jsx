@@ -1,17 +1,16 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Text, View, StyleSheet, FlatList, Dimensions } from "react-native";
+import { Text, View, FlatList, Dimensions } from "react-native";
 import { LineChart } from "react-native-chart-kit";
-
+import { Image } from "react-native";
 import { ColorContext } from "../../functions/providers/ColorContext";
 import { UserContext } from "../../functions/providers/UserContext";
 import IconButton from "../../components/General/Button";
 import generalStyles from "../../styles/generalStyles";
+import styles from "../../styles/analysisStyles";
 
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 dayjs.extend(utc);
-
-const windowWidth = Dimensions.get("window").width;
 
 const graphTypes = [
   {
@@ -148,14 +147,14 @@ export default function Analysis(props) {
                     ],
                     datasets: [
                       {
-                        data: graphData.map(o => o[item.name])
+                        data: tempData.map(o => o[item.name])
                       },
                     ],
                   }}
                   width={Dimensions.get("window").width*.925 } // from react-native
                   height={220}
                   yAxisMax={10}
-                  hidePointsAtIndex={undefinedIndices}
+                  // hidePointsAtIndex={undefinedIndices}
                   fromZero={true}
                   yAxisInterval={2} // optional, defaults to 1
                   chartConfig={{
@@ -169,10 +168,10 @@ export default function Analysis(props) {
                       backgroundColor: "none",
                     },
                     propsForDots: {
-                      r: "10",
-                      strokeWidth: "4",
-                      stroke: "#006400",
-                      fill: "green"
+                      r: "7",
+                      strokeWidth: "2",
+                      stroke: color.inactive,
+                      fill: color.background
                     },
                   }}
                   bezier
@@ -194,17 +193,3 @@ export default function Analysis(props) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  graph: {
-    width: windowWidth * 0.925,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 25,
-  },
-});

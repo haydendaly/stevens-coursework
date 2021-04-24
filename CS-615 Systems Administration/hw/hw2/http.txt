@@ -1,0 +1,81 @@
+## Initial TCP Handshake
+
+No.     Time           Source                Destination           Protocol Length Info
+      1 0.000000       2600:1f18:94f:2600:ba5c:9c5c:4a5f:8e97 2604:180:f1::92       TCP      94     35328 → 80 [SYN] Seq=0 Win=62587 Len=0 MSS=8941 SACK_PERM=1 TSval=2066881298 TSecr=0 WS=128
+
+Frame 1: 94 bytes on wire (752 bits), 94 bytes captured (752 bits)
+Ethernet II, Src: 06:9e:a1:16:fa:eb (06:9e:a1:16:fa:eb), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 6, Src: 2600:1f18:94f:2600:ba5c:9c5c:4a5f:8e97, Dst: 2604:180:f1::92
+Transmission Control Protocol, Src Port: 35328, Dst Port: 80, Seq: 0, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      2 0.016628       2604:180:f1::92       2600:1f18:94f:2600:ba5c:9c5c:4a5f:8e97 TCP      94     80 → 35328 [SYN, ACK] Seq=0 Ack=1 Win=65535 Len=0 MSS=1440 WS=64 SACK_PERM=1 TSval=960158330 TSecr=2066881298
+
+Frame 2: 94 bytes on wire (752 bits), 94 bytes captured (752 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:9e:a1:16:fa:eb (06:9e:a1:16:fa:eb)
+Internet Protocol Version 6, Src: 2604:180:f1::92, Dst: 2600:1f18:94f:2600:ba5c:9c5c:4a5f:8e97
+Transmission Control Protocol, Src Port: 80, Dst Port: 35328, Seq: 0, Ack: 1, Len: 0
+
+## Actual HTTP Request
+
+No.     Time           Source                Destination           Protocol Length Info
+      3 0.016662       2600:1f18:94f:2600:ba5c:9c5c:4a5f:8e97 2604:180:f1::92       TCP      86     35328 → 80 [ACK] Seq=1 Ack=1 Win=62592 Len=0 TSval=2066881315 TSecr=960158330
+
+Frame 3: 86 bytes on wire (688 bits), 86 bytes captured (688 bits)
+Ethernet II, Src: 06:9e:a1:16:fa:eb (06:9e:a1:16:fa:eb), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 6, Src: 2600:1f18:94f:2600:ba5c:9c5c:4a5f:8e97, Dst: 2604:180:f1::92
+Transmission Control Protocol, Src Port: 35328, Dst Port: 80, Seq: 1, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      4 8.467659       2600:1f18:94f:2600:ba5c:9c5c:4a5f:8e97 2604:180:f1::92       TCP      91     35328 → 80 [PSH, ACK] Seq=1 Ack=1 Win=62592 Len=5 TSval=2066889766 TSecr=960158330
+
+Frame 4: 91 bytes on wire (728 bits), 91 bytes captured (728 bits)
+Ethernet II, Src: 06:9e:a1:16:fa:eb (06:9e:a1:16:fa:eb), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 6, Src: 2600:1f18:94f:2600:ba5c:9c5c:4a5f:8e97, Dst: 2604:180:f1::92
+Transmission Control Protocol, Src Port: 35328, Dst Port: 80, Seq: 1, Ack: 1, Len: 5
+
+## HTTP Response
+
+No.     Time           Source                Destination           Protocol Length Info
+      5 8.483989       2604:180:f1::92       2600:1f18:94f:2600:ba5c:9c5c:4a5f:8e97 HTTP     395    HTTP/1.1 400 Bad Request  (text/html)
+
+Frame 5: 395 bytes on wire (3160 bits), 395 bytes captured (3160 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:9e:a1:16:fa:eb (06:9e:a1:16:fa:eb)
+Internet Protocol Version 6, Src: 2604:180:f1::92, Dst: 2600:1f18:94f:2600:ba5c:9c5c:4a5f:8e97
+Transmission Control Protocol, Src Port: 80, Dst Port: 35328, Seq: 1, Ack: 6, Len: 309
+Hypertext Transfer Protocol
+Line-based text data: text/html (7 lines)
+
+## Connection Termination
+
+No.     Time           Source                Destination           Protocol Length Info
+      6 8.484009       2600:1f18:94f:2600:ba5c:9c5c:4a5f:8e97 2604:180:f1::92       TCP      86     35328 → 80 [ACK] Seq=6 Ack=310 Win=62336 Len=0 TSval=2066889782 TSecr=960166790
+
+Frame 6: 86 bytes on wire (688 bits), 86 bytes captured (688 bits)
+Ethernet II, Src: 06:9e:a1:16:fa:eb (06:9e:a1:16:fa:eb), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 6, Src: 2600:1f18:94f:2600:ba5c:9c5c:4a5f:8e97, Dst: 2604:180:f1::92
+Transmission Control Protocol, Src Port: 35328, Dst Port: 80, Seq: 6, Ack: 310, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      7 8.484030       2604:180:f1::92       2600:1f18:94f:2600:ba5c:9c5c:4a5f:8e97 TCP      86     80 → 35328 [FIN, ACK] Seq=310 Ack=6 Win=66240 Len=0 TSval=960166790 TSecr=2066889766
+
+Frame 7: 86 bytes on wire (688 bits), 86 bytes captured (688 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:9e:a1:16:fa:eb (06:9e:a1:16:fa:eb)
+Internet Protocol Version 6, Src: 2604:180:f1::92, Dst: 2600:1f18:94f:2600:ba5c:9c5c:4a5f:8e97
+Transmission Control Protocol, Src Port: 80, Dst Port: 35328, Seq: 310, Ack: 6, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      8 8.484077       2600:1f18:94f:2600:ba5c:9c5c:4a5f:8e97 2604:180:f1::92       TCP      86     35328 → 80 [FIN, ACK] Seq=6 Ack=311 Win=62336 Len=0 TSval=2066889782 TSecr=960166790
+
+Frame 8: 86 bytes on wire (688 bits), 86 bytes captured (688 bits)
+Ethernet II, Src: 06:9e:a1:16:fa:eb (06:9e:a1:16:fa:eb), Dst: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f)
+Internet Protocol Version 6, Src: 2600:1f18:94f:2600:ba5c:9c5c:4a5f:8e97, Dst: 2604:180:f1::92
+Transmission Control Protocol, Src Port: 35328, Dst Port: 80, Seq: 6, Ack: 311, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      9 8.500000       2604:180:f1::92       2600:1f18:94f:2600:ba5c:9c5c:4a5f:8e97 TCP      86     80 → 35328 [ACK] Seq=311 Ack=7 Win=66240 Len=0 TSval=960166810 TSecr=2066889782
+
+Frame 9: 86 bytes on wire (688 bits), 86 bytes captured (688 bits)
+Ethernet II, Src: 06:5b:08:4d:36:0f (06:5b:08:4d:36:0f), Dst: 06:9e:a1:16:fa:eb (06:9e:a1:16:fa:eb)
+Internet Protocol Version 6, Src: 2604:180:f1::92, Dst: 2600:1f18:94f:2600:ba5c:9c5c:4a5f:8e97
+Transmission Control Protocol, Src Port: 80, Dst Port: 35328, Seq: 311, Ack: 7, Len: 0

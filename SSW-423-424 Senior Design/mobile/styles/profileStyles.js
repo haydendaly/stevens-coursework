@@ -18,7 +18,6 @@ const profileStyles = StyleSheet.create({
     },
     logoutText: {
         textAlign: 'center',
-        color: 'red',
         textDecorationLine: 'underline',
         fontSize: 18
     },
@@ -63,7 +62,6 @@ const profileStyles = StyleSheet.create({
     },
     colorsRectangle: {
         flexDirection: 'row',
-        flexWrap: 'wrap',
         padding: 20,
         paddingTop: 10
     }

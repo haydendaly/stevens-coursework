@@ -100,8 +100,8 @@ const colorSchemes = {
 }
 
 export const useColor = () => {
-    const [name, setName] = useState("original");
-    const [color, setColor] = useState(original);
+    const [name, setName] = useState("green");
+    const [color, setColor] = useState(green);
 
     useEffect(() => {
         AsyncStorage.getItem('color-scheme', (err, val) => {

@@ -30,9 +30,11 @@ const ResourcesTabs = () => {
           shadowColor: color.shadow
         },
         labelStyle: {
-          fontSize: 18,
+          fontSize: 17,
           fontFamily: "medium",
           textTransform: "none",
+          marginLeft: -5,
+          marginRight: -5
         },
         indicatorStyle: {
           backgroundColor: color.highlight,

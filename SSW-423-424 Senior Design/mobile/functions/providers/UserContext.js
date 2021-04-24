@@ -30,7 +30,7 @@ export const useUser = () => {
   const [journals, setJournals] = useState([]);
   const [moods, setMoods] = useState([]);
   const [awards, setAwards] = useState([]);
-  const [pin, setPin] = useState({});
+  const [pin, setPin] = useState('');
   const [authCode, setAuthCode] = useState('hello');
 
   // Gets userID from phone's storage (we just use hardcoded rn) and calls getUser, getJournals, getMoods
@@ -256,9 +256,23 @@ export const useUser = () => {
 
   // Updates user object by userID with new partial object, new fields can look like { color: "red", phoneNumber: "newnumberlol" }
   const updateUser = (id, newFields) => {
-      db.collection('users').doc(id).update({
-          // not quite sure how to access dictionary then update
-      });
+    db.collection('users')
+    .doc(id)
+    .get()
+    .then((doc) => {
+        if (doc.exists) {
+            const userData = doc.data();
+
+            if ("pin" in newFields) {
+                setPin(newFields.pin)
+            }
+
+            db.collection('users').doc(id).update({
+                ...userData,
+                ...newFields
+            });
+        }
+    });
   };
 
   // Updates journal object by userID and journalID with new partial object, new fields can look like { private: true, body: "something different" }

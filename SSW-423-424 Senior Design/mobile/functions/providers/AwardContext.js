@@ -9,34 +9,34 @@ import { UserContext } from "../../functions/providers/UserContext";
 const firstEntry = {
     id: 1,
     description: "You filled out your first journal entry",
-    image: "https://www.clipartqueen.com/image-files/koi-fish-drawing-color-2.png"
+    image: "https://firebasestorage.googleapis.com/v0/b/hodas-f14c5.appspot.com/o/lily3.png?alt=media&token=1521c502-162f-4b31-a630-ca6fee02ec47"
 }
 
 // accounted for
 const starredEntry = {
     id: 2,
     description: "You starred a journal entry",
-    image: "https://i.pinimg.com/originals/21/ee/a8/21eea8607b69cc3b790eab0e06d17592.png"
+    image: "https://firebasestorage.googleapis.com/v0/b/hodas-f14c5.appspot.com/o/lily1.png?alt=media&token=4372ab5b-cc32-440e-932c-a80e1b04affe"
 }
 
 const tenEntries = {
     id: 3,
     description: "You created 10 journal entries",
-    image: "https://www.freepnglogos.com/uploads/lotus-png/lotus-png-image-collections-are-available-for-9.png"
+    image: "https://firebasestorage.googleapis.com/v0/b/hodas-f14c5.appspot.com/o/lily2.png?alt=media&token=3c87cf74-0d7e-4a15-8184-edeea9ed30d7"
 }
 
 //accounted for
 const privateEntry = {
     id: 4,
     description: "You made a journal entry private",
-    image: "https://www.clipartqueen.com/image-files/koi-fish-drawing-color-2.png"
+    image: "https://firebasestorage.googleapis.com/v0/b/hodas-f14c5.appspot.com/o/lily5.png?alt=media&token=9724a6a4-432d-40d6-800c-b4eedb555c72"
 }
 
 //accounted for
 const privateAndStarredEntry = {
     id: 5,
-    description: "You made a single journal entry\nprivate and starred it",
-    image: "https://www.pinclipart.com/picdir/big/278-2781225_dragonfly-clipart-transparent-background-png-download.png"
+    description: "You made a single journal entry private and starred it",
+    image: "https://firebasestorage.googleapis.com/v0/b/hodas-f14c5.appspot.com/o/lily4.png?alt=media&token=7808eaf7-48e8-4bf6-bf86-9a13e9112a78"
 }
 
 

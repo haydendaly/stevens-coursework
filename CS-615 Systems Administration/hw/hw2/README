@@ -1,0 +1,81 @@
+# CS 615 Homework 2
+
+I pledge my honor I have abided by the Stevens Honor System - Hayden C. Daly
+
+## traceroute
+
+### OmniOS / snoop(1M)
+
+Created OmniOS instance and started with a `snoop(1M)` in the background and then ran a traceroute. This let me inspect the packets accordingly.
+
+```sh
+$ snoop -o temp.snoop 'icmp or udp' >&/dev/null &
+$ traceroute www.stevens.edu > traceroute.txt
+$ fg
+$ snoop -r -i temp.snoop
+```
+
+This allowed me to move the task to the background, run traceroute, move the task to the foreground, and collect the packets with `snoop(1M)`.
+The -o flag used in the first usage of `snoop(1M)` specifies output file, the string specifies the type of packets, and the rest runs it as a background job. The -r flag in the second usage converts the IP addresses to plaintext in the output.
+
+### Fedora / tcpdump(8)
+
+First I installed traceroute and tcpdump with yum. This was a gotcha for me as I didn't realize how bare Fedora instances are. So I was running `tcpdump(8)` as a background job and unaware of it failing.
+
+```sh
+$ sudo yum install traceroute
+$ sudo yum install tcpdump
+```
+
+Then I ran a basic sequence of commands to do the traceroute shown below.
+
+```sh
+$ tcpdump -w temp.dump 'icmp or udp' >&/dev/null &
+$ traceroute www.stevens.edu > traceroute.txt
+$ fg
+$ tcpdump -n -r temp.dump
+```
+
+The -w flag specified to show details, the string specified packet types, and the rest ran it as a background job. The -n flag is basically the same as -r in OmniOS/`snoop(1M)`.
+
+### Comparisons
+
+Interestingly, Fedora has quicker traceroute despite having large packets than OmniOS (after inspection of packets). I had more trouble on the Fedora instance (see above for more detail) but it was simpler to use as there exists an abundance of information online when compared to OmniOS and `snoop(1M)`.
+
+## telnet(1)
+
+To setup a VPC that suports IPv6, I followed the tutorial provided in the netmeister blog https://www.netmeister.org/blog/ec2-ipv6.html (really great tutorial!). This allowed me to setup a VPC and launch the instances inside of it. Since it is redudnant work, I only did this on the Fedora instance.
+
+### Fedora / tcpdump(8)
+
+After doing the installs and giving myself superuser access, I ran a similar sequence of commands to the prior parts as shown below.
+
+```sh
+$ tcpdump -w temp.pcap 'tcp' >&/dev/null &
+$ telnet 6.ifconfig.pro 80
+$ fg
+$ tcpdump -n -r temp.pcap
+```
+
+To retrive the file, I ran `scp -i aws.pem fedora@ec2-52-207-136-162.compute-1.amazonaws.com:temp.pcap temp.pcap`.
+Looking at the tcpdump in WireShark, it was very crowded which led me to conclude that I was actually listening to packets from my SSH session so I had to manually remove these packets.
+I then exported these from WireShark into http.txt with had an already marked up plaintext format. I then annotated this further based on my analysis.
+
+## Fedora / traceroute
+
+To run all the traceroutes, I only did it on the Fedora instance to avoid redudnancy. I ran the sequence of traceroutes and appended the output to a single traceroute.txt file.
+
+```sh
+$ traceroute 155.246.56.11 > telnet-traceroute.txt
+$ traceroute 206.195.187.229 >> telnet-traceroute.txt
+$ ...
+$ traceroute 211.233.84.186 >> telnet-traceroute.txt
+```
+
+To annotate the traceroute, I started by writing a Python script to automate the process (see annotator.py in Support) of the raw telnet-traceroute.txt file.
+To count the ASNS, I wrote another script in Support/asn_count.py to parse the traceroute output.
+
+### Visual Traceroute
+
+To analyze these I used `nslookup(1)` to find the domain names and then used https://gsuite.tools/traceroute to visualize them. This made the traceroute different than that on the EC2 instance as the request was coming from London.
+I was interested in why the Honolulu requests jumps to Hawaii, to LA, and then back to Hawaii but in packet analysis, I was able to determine that this is actually just a loadbalancer being used.

@@ -43,7 +43,7 @@ const JournalsTabs = () => {
           }
         },
         labelStyle: {
-          fontSize: 18,
+          fontSize: 17,
           fontFamily: "medium",
           textTransform: "none",
         },

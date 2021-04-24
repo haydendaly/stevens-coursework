@@ -20,6 +20,6 @@ export const navigationStyles = StyleSheet.create({
     },
     footer: {
         backgroundColor: color.primary,
-        height: 95
+        height: "13%"
     }
 });

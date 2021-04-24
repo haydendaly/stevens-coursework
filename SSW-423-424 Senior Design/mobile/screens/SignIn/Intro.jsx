@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
-import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
+import { Text, View, TouchableOpacity } from "react-native";
 
+import styles from "../../styles/introStyles";
 import { ColorContext } from "../../functions/providers/ColorContext";
 
 export default function Intro(props) {
@@ -25,32 +26,3 @@ export default function Intro(props) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  button: {
-    height: 50,
-    width: 100,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 10
-  },
-  headerText: {
-    fontSize: 24
-  },
-  subHeaderText: {
-    fontSize: 20
-  },
-  bodyText: {
-    fontSize: 15,
-    textAlign: 'center',
-    width: '75%'
-  },
-  underlineText: {
-    textDecorationLine: 'underline'
-  }
-});
