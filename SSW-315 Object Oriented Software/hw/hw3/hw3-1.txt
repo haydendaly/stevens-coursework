@@ -1,0 +1,65 @@
+1) (2 points) Swap two adjacent elements by adjusting only the links (and not the data) using:
+
+	public void swap (Node node0, Node node1, node2) {
+		node0.next = node2;
+		node1.next = node2.next;
+		node2.next = node1;
+	}
+
+2) (2 points) What is the running time of the following code?
+
+O(n^2)
+
+3) (2 points) The following routine removes the first half of the list passed as a parameter:
+
+(a) theSize is saved prior to entering the loop because the loop reduces by one thus making the functionality inefficient. By halfing the size, it saves memory.
+
+(b) O(n^2)
+
+(c) O(n)
+
+(d) No, by using the iterator there is no difference made in complexity.
+ 
+
+4) (2 points) 
+	for (int i = 0; i <= array.size; i++) {
+		if (i <= stack.size/2) {
+			stack1.push(array[i]);
+		} else {
+			stack2.push(array[i]);
+		}
+	}
+ 
+
+5) (2 points) Write an algorithm for printing a singly linked list in reverse, using only constant extra space. This instruction implies that you cannot use recursion but you may assume that your algorithm is a list member function.
+
+	public void reversePrint(Node node) {
+		Node prev = null; 
+        	Node current = node; 
+        	Node next = null; 
+        	while (current != null) { 
+            		next = current.next; 
+            		current.next = prev; 
+            		prev = current; 
+			current = next;
+		}
+		current = prev;
+		while (current != null) {
+			System.out.println(prev.data);  
+			current = current.next;
+		}
+	}
+ 
+6) (2 points) A linked list contains a cycle if, starting from some node p, following a sufficient number of next links brings us back to node p. [Node] p does not have to be the first node in the list. Assume that you are given a linked list that contains N nodes. However, the value of N is unknown.
+
+(a) My algorithm would take the form as a loop through the list that adds all the elements to an array. There would be an if statement to see if that element is already contained in the list. If so, it contains a cycle.
+(b) To achieve this, I would increase my time complexity and use a double for loop that iterates through the list twice comparing each element individually. 
+
+7) (2 points) Suppose we have a reference to a node in a singly linked list that is guaranteed
+
+The only way to do it in constant time is to swap that data of the two nodes, otherwise you would have iterate up the list to get to the prior Node which would require linear complexity. So the proposed algorithm would look like:
+
+nodeKnown.data = nodeKnown.next.data;
+nodeKnown.next = nodeKnown.next.next;
+
+

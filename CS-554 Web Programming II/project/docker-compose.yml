@@ -1,0 +1,68 @@
+version: "3.3"
+services:
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    # logging:
+    #   driver: none
+    expose:
+      - 8000
+
+  redis:
+    image: redis:latest
+    container_name: cache
+    logging:
+      driver: none
+    expose:
+      - 6379
+
+  backend:
+    container_name: backend
+    build: ./backend
+    # logging:
+    #   driver: none
+    links:
+      - redis
+      - mongo
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    environment:
+      - REDIS_URL=redis://cache
+      - MONGO_SERVER_URL=mongodb://mongo:27017/
+    tty: true
+
+
+  mongo:
+    image: mongo:latest
+    restart: always
+    logging:
+      driver: none
+    environment:
+      MONGO_INITDB_DATABASE: SpotifyTwitter
+
+  nginx:
+    image: nginx:1.13.7
+    logging:
+      driver: none
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - backend
+      - frontend 
+    links:
+      - backend
+      - frontend
+
+  seed:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile.seed
+    links:
+      - mongo
+    environment:
+      - REDIS_URL=redis://cache
+      - MONGO_SERVER_URL=mongodb://mongo:27017/

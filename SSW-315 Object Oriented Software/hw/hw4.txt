@@ -1,0 +1,162 @@
+(2 points) A full node is a node with two children. Prove that the number of full nodes plus one is equal to the number of leaves in a nonempty binary tree.
+
+Using induction:
+Base Case (N=0): T(0) = 0 + 1
+Next Case (N=1): T(1) = 1 + 1
+Proof Case (N=k): T(k) = k + 1
+Since T is true for N+1, T must be true for N+k by mathematical induction.
+
+(2 points) (a) Show the result of inserting 3, 1, 4, 6, 9, 2, 5, 7 into an initially empty binary search tree;
+
+   3
+  / \
+ 1   4
+  \   \
+   2   6
+      / \
+     5   9
+        /
+       7
+
+(b) Show the result of deleting the root.
+
+   4
+  / \
+ 1   6
+  \ / \
+  2 5  9
+      /
+     7
+
+(3 points) Write a routine to list out the nodes of a binary tree in level-order. List the root, then nodes at depth 1, followed by nodes at depth 2, and so on. You must do this in linear time. Prove your time bound.
+
+Queue<Node> tempQueue = new java.util.LinkedList<Node>();
+if (root == null) {
+		return;
+}
+Node temp = new Node(-1);
+tempQueue.add(root);
+tempQueue.add(temp);
+while(tempQueue.size() > 0){
+		Node temp2 = tempQueue.poll();
+		if(temp == temp2){
+   			if(tempQueue.size()>0) {
+       			tempQueue.add(temp);
+        }
+   			continue;
+    }
+		System.out.print(temp2.data + " ");
+		if(temp2.left!=null) {
+   			tempQueue.add(temp2.left);
+    }
+		if(temp2.right!=null) {
+      tempQueue.add(temp2.right);
+    }
+}
+
+Time bound would be O(n) due to the while loop implemented the LevelOrderTraversal Method
+
+(3 points) Suppose we want to add the operation findKth to our repertoire. The operation findKth(k) returns the kth smallest element item in the tree. Assume all items are distinct. Explain how to modify the binary search tree to support this operation in O(logN) [i.e., O(d)] average time, without sacrificing the time bounds of any other operation.
+
+One way this could implemented in a BST is by having all of the left subtree containing the smaller elements. If the specified value of k is smaller than that of the branch length for the left, then it is in the left branch, otherwise it would be in the right branch effectively reducing the time to O(logn) similar to that of a binary search algo.
+
+(5 Points) Weiss 19.26: Implement a binary search tree to allow duplicates. Have each node store a linked list of items that are considered duplicates (using the first item in the linked list) to control branching.
+
+import java.util.LinkedList;
+public class BinarySearchTree {
+   Node root;
+   BinarySearchTree(){
+       this.root = null;
+   }
+   public boolean isEmpty() {
+       if(this.root == null) {
+           return true;
+       }
+       return false;
+   }
+   public void insert(int value) {
+       if(this.root == null) {
+           this.root = new Node(value, null);
+       }else {
+           insert2(value, root, null);
+       }
+   }
+   public void preorder(int height, Node node1, int side) {
+       if(node1 == null) {
+           return;
+       }
+       LinkedList<Integer> value = node1.getValue();
+       if(side == 1) {
+           System.out.println("Right Height: "+height+" Value: "+value);
+       }
+       if(side == -1) {
+           System.out.println("Left Height: "+height+" Value: "+value");
+       }
+       preorder(height+1, node1.left, -1);
+       preorder(height+1, node1.right, 1);
+   }
+   private void insert2(int value, Node node1, Node parent) {
+       int temp;
+       if(node1 == null) {
+           temp = parent.data.getFirst();
+           Node node2 = new Node(value, parent);
+           if(value < temp) {
+               parent.left = node2;
+           }else {
+               parent.right = node2;
+           }
+           return;
+       }
+       temp = node1.data.getFirst();
+       if(value == temp) {
+           node1.setData(value);
+       } else if(value < temp) {
+           insert2(value, node1.left, node1);
+       } else {
+           insert2(value, node1.right, node1);
+       }
+   }
+}
+public class Node {
+   Node parent;
+   Node left;
+   Node right;
+   LinkedList<Integer> LL;
+   Node(int value, Node parent){
+       LL = new LinkedList<Integer>();
+       LL.add(value);
+       this.left = null;
+       this.right = null;
+       this.parent = parent;
+   }
+   public LinkedList<Integer> getValue() {
+       return value;
+   }
+   public void setValue(int value) {
+       this.LL.add(value);
+   }
+}
+
+(5 Points) Weiss 19.27: Implement a toString method for class BinarySearchTree. Make sure your method runs in linear time. Hint: Use a private recursive method that has a Node and a StringBuilder as its parameters.
+
+public class Node {
+	private int value;
+	private Node left;
+	private Node right;
+	public Node(int value) {
+		this.value = value;
+	}
+}
+public class Node {
+	public String toString() {
+		String response = "";
+		if (left != null) {
+			response = response + left.toString() + ",';
+		}
+		response = response + Integer.toString(value);
+		if (right != null) {
+			response= response + right.toString() + ",";
+		}
+		return response;
+	}
+}

@@ -1,0 +1,4 @@
+Hayden:
+* Make book on Club View Screen Touchable Opacity leading to BookView
+* Push to TestFlight / Google Play
+* Fix up UI

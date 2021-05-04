@@ -1,0 +1,70 @@
+--> 0 NOTE one generation of an imaginary family
+<-- 0|NOTE|Y|one generation of an imaginary family
+--> 0 I01 INDI
+<-- 0|INDI|Y|I01
+--> 1 NAME Joe /Smith/
+<-- 1|NAME|Y|Joe /Smith/
+--> 1 BIRT
+<-- 1|BIRT|Y|
+--> 2 DATE 15 JUL 1960
+<-- 2|DATE|Y|15 JUL 1960
+--> 1 SEX M
+<-- 1|SEX|Y|M
+--> 1 FAMS F23
+<-- 1|FAMS|Y|F23
+--> 1 DEAT
+<-- 1|DEAT|Y|
+--> 2 DATE 31 DEC 2013
+<-- 2|DATE|Y|31 DEC 2013
+--> 0 NOTE define Jennifer Smith
+<-- 0|NOTE|Y|define Jennifer Smith
+--> 0 I07 INDI
+<-- 0|INDI|Y|I07
+--> 1 NAME Jennifer /Smith/
+<-- 1|NAME|Y|Jennifer /Smith/
+--> 1 BIRT
+<-- 1|BIRT|Y|
+--> 2 DATE 23 SEP 1960
+<-- 2|DATE|Y|23 SEP 1960
+--> 1 SEX F
+<-- 1|SEX|Y|F
+--> 1 FAMS F23
+<-- 1|FAMS|Y|F23
+--> 0 I19 INDI
+<-- 0|INDI|Y|I19
+--> 1 NAME Dick /Smith/
+<-- 1|NAME|Y|Dick /Smith/
+--> 1 BIRT
+<-- 1|BIRT|Y|
+--> 2 DATE 13 FEB 1981
+<-- 2|DATE|Y|13 FEB 1981
+--> 1 SEX M
+<-- 1|SEX|Y|M
+--> 1 FAMC F23
+<-- 1|FAMC|Y|F23
+--> 0 I26 INDI
+<-- 0|INDI|Y|I26
+--> 1 NAME Jane /Smith/
+<-- 1|NAME|Y|Jane /Smith/
+--> 1 BIRT
+<-- 1|BIRT|Y|
+--> 2 DATE 2 JUN 1983
+<-- 2|DATE|Y|2 JUN 1983
+--> 1 SEX F
+<-- 1|SEX|Y|F
+--> 1 FAMC F23
+<-- 1|FAMC|Y|F23
+--> 0 F23 FAM
+<-- 0|FAM|Y|F23
+--> 1 MARR
+<-- 1|MARR|Y|
+--> 2 DATE 14 FEB 1980
+<-- 2|DATE|Y|14 FEB 1980
+--> 1 HUSB I01
+<-- 1|HUSB|Y|I01
+--> 1 WIFE I07
+<-- 1|WIFE|Y|I07
+--> 1 CHIL I19
+<-- 1|CHIL|Y|I19
+--> 1 CHIL I26
+<-- 1|CHIL|Y|I26

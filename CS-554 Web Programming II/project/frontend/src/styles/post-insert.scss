@@ -1,0 +1,151 @@
+.post-main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.post-list {
+    overflow-y: scroll;
+    background-color: none;
+    overflow: hidden;
+}
+
+.post-new-button {
+    position: fixed;
+    bottom: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ee0000;
+}
+
+.post-post {
+    background-color: #191919;
+    max-width: 760px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    font-size: 17px;
+}
+
+.post-header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.post-header-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.post-header-options {
+    display: flex;
+    flex-direction: row;
+}
+
+.post-header-button {
+    color: #999;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 20px;
+}
+
+.post-user-icon {
+    height: 50px;
+    width: 50px;
+    margin-left: 15px;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.post-header-text {
+    margin-left: 15px;
+    font-size: 18px;
+}
+
+.post-user-name {
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+.post-header-date {
+    margin-bottom: 0px;
+}
+
+.post-body {
+    padding: 15px;
+    margin-right: 0.5%;
+}
+
+.post-song {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-footer {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.post-menu-icon {
+    font-size: 20px;
+}
+
+.post-menu-icon:hover {
+    color: #fff;
+}
+
+.post-button {
+    color: #999;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    justify-content: space-between;
+    width: 45px;
+}
+
+.post-comment-holder {
+    padding: 15px;
+    padding-bottom: 0px;
+    width: 100%;
+    border-top: 1px solid;
+    border-color: #999;
+}
+
+.post-comments {
+    background-color: #272727;
+    color: #fff;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.post-comments-add-button {
+    float: right;
+    background-color: #ee0000;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+}

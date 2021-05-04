@@ -1,0 +1,146 @@
+.user-main {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons {
+  text-align: center;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons li {
+  display: inline-block;
+  list-style-type: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+.social-icons li a {
+  border-bottom: none;
+}
+
+.social-icons li img {
+  width: 40px;
+  height: 40px;
+  margin-right: 40px;
+}
+
+.input-file{
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.card {
+  background-color:  #191919;
+  max-width: 330px;
+  border-radius: 20px;
+  flex: 1;
+  text-align: center;
+}
+
+.card-body p{
+  font-size: 15px;
+  width: 100%;
+}
+
+p.card-title {
+  font-size: 24px;
+  width: 100%;
+}
+
+.user-img {
+  padding-top: 10px;
+  display: flex;
+}
+.img-upload .btn:hover {
+	background: linear-gradient(to left, #ee0000 50%, white 50%) right;
+	background-size: 200%;
+	transition: 0.5s ease-out;
+	color: white;
+}
+
+.edit-profile{
+  font-size: 15px;
+  background-color: #191919;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.form-control{
+  font-size: 15px;
+}
+
+.edit-profile label{
+  width: 300px;
+}
+
+.edit-button{
+  color: white;
+}
+
+.card img{
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+.info-tag{
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.content{
+  color: #c4c4c4;
+  text-align: center;
+}
+
+.card-body a{
+  font-size: 15px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.card-body a:hover{
+  text-decoration: none !important;
+  color: white;
+  font-weight: bold;
+}
+
+.edit-profile{
+  border-radius: 20px;
+}
+
+.edit-profile a{
+  color: white;
+}
+
+.edit-profile .btn:hover {
+	background: linear-gradient(to left, #ee0000 50%, white 50%) right;
+	background-size: 200%;
+	transition: 0.5s ease-out;
+	color: white;
+}
+
+.no-login{
+  font-size: 20px;
+  text-align: center;
+}
+
+.webUrl{
+  display: flex;
+}
+
+.webUrl .edit-button{
+  font-size: 25px;
+}

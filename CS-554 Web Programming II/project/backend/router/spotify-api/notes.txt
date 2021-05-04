@@ -1,0 +1,24 @@
+Caching Info:
+example cache key: spotify-api/albums/31jHyTSpj8nWQgV45gvZA3?{"market":"US"}
+value returned is the JSON
+
+
+The following routes are cached:
+albums.js
+    GET	/albums/{id}	            Get an Album	                album
+    GET	/albums/{id}/tracks	        Get an Album's Tracks	        tracks
+    GET	/albums	                    Get Several Albums	            albums
+artists.js
+    GET	/artists/{id}	                Get an Artist                     artist
+    GET	/artists/{id}/albums	        Get an Artist's Albums            albums
+    GET	/artists/{id}/top-tracks	    Get an Artist's Top Tracks        tracks
+    GET	/artists/{id}/related-artists	Get an Artist's Related Artists	  artists
+    GET	/artists	                    Get Several Artists	              artists
+tracks.js
+    GET	/tracks/{id}	              Get a track 	                    track
+    GET	/tracks	                      Get several tracks	            tracks
+search.js
+    GET /search                     Search based upon query             various media data
+
+Other routes are not cached due to their constant changes (e.g. dont want to cache a playlist, people add
+to them fairly often)

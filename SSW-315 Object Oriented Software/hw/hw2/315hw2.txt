@@ -1,0 +1,19 @@
+3.2
+
+The public and private sections of a class are for designating the visibility of methods/values/etc. This allows methods and variables to only be accessed within the class if declared as private or out of the class if declared as public.
+
+3.4
+
+If a class doesn't provide a constructor, it will use the constructor of the basic Java class it inherits. This is just a simple no parameter constructor.
+
+4.1
+
+The public or protected methods an inherited class can be used in the derived class. The members that become public for users of the derived class are only public because the protected and private stay hidden.
+
+4.9
+
+An interface is basically an abstract class where none of the methods can be concrete. It provides a set of methods and variables that anything that inherits it must have.
+
+5.11
+
+The running time of the provided algorithm to computer the exponential value is just O(n) because there is only one for loop with nothing that would cause n^2 or log(n).

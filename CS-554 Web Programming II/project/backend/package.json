@@ -1,0 +1,41 @@
+{
+  "name": "cs554-music-project",
+  "version": "1.0.0",
+  "description": "Final project for CS554",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "seed": "node seed.js",
+    "format": "eslint"
+  },
+  "author": "JavaScripters",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^4.11.1",
+    "axios": "^0.21.0",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "debug": "^2.6.9",
+    "express": "^4.17.1",
+    "firebase": "^8.1.1",
+    "firebase-admin": "^9.4.1",
+    "flat": "^5.0.2",
+    "http-errors": "^1.6.3",
+    "mongodb": "^3.6.3",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "react-model": "^3.1.4",
+    "redis": "^3.0.2",
+    "spotify-web-api-node": "^5.0.0",
+    "uuid": "^8.3.1",
+    "xss": "^1.0.8"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.2.0",
+    "prettier": "^2.2.1"
+  }
+}

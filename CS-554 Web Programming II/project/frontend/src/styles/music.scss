@@ -1,0 +1,95 @@
+.share-button {
+    background-color: #ee0000;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    width: 100px;
+    margin: auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.share-button:hover {
+    background-color: #dd0000;
+}
+
+.share-textarea {
+    background-color: #272727;
+    color: #fff;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 17px;
+}
+
+.post-body-song {
+    background-color: #272727;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #fff;
+    height: 150px;
+    padding: 15px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.post-body-song:hover {
+    height: 152px;
+    width: 81%;
+    text-decoration: none;
+}
+
+.post-body-song-icon {
+    height: 120px;
+    width: 120px;
+    overflow: hidden;
+    margin-left: 5px;
+}
+
+.post-body-song-info {
+    margin-left: 25px;
+}
+
+.post-body-song-title {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.post-body-song-artist {
+    font-size: 17px;
+    margin-top: 0px;
+    color: #999;
+}
+
+.select-type-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+}
+
+.select-type-header-component {
+    color: #999;
+    font-size: 20px;
+    background-color: #191919;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+.select-type-header-component:hover {
+    color: #ff0000;
+    background-color: #313131;
+}

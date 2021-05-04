@@ -1,0 +1,423 @@
+{
+  "individualData": {
+    "@US01_01@": {
+      "INDILine": "5",
+      "NAME": "Birth Date After Current /Date/ Age N/A",
+      "NAMELine": "6",
+      "BIRT": "3000-01-01",
+      "BIRTLine": "8",
+      "SEX": "F",
+      "SEXLine": "9",
+      "FAMS": [
+        "@US01@"
+      ],
+      "FAMSLine": "10",
+      "FAMC": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    },
+    "@US01_02@": {
+      "INDILine": "11",
+      "NAME": "Death Date After Current /Date/",
+      "NAMELine": "12",
+      "DEAT": "4000-12-31",
+      "DEATLine": "14",
+      "SEX": "M",
+      "SEXLine": "15",
+      "FAMS": [
+        "@US01@"
+      ],
+      "FAMSLine": "16",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "ALIVE": "False",
+      "AGE": "N/A"
+    },
+    "@US01_03@": {
+      "INDILine": "17",
+      "NAME": "MARR DIV After Current /Date/",
+      "NAMELine": "18",
+      "SEX": "M",
+      "SEXLine": "19",
+      "FAMS": [
+        "@US01_A@"
+      ],
+      "FAMSLine": "20",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    },
+    "@US01_04@": {
+      "INDILine": "21",
+      "NAME": "MARR DIV After Current /Date/",
+      "NAMELine": "22",
+      "SEX": "F",
+      "SEXLine": "23",
+      "FAMS": [
+        "@US01_A@"
+      ],
+      "FAMSLine": "24",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    },
+    "@US02_01@": {
+      "INDILine": "25",
+      "NAME": "Birth After /Marriage/ Age 119",
+      "NAMELine": "26",
+      "BIRT": "1900-01-01",
+      "BIRTLine": "28",
+      "SEX": "F",
+      "SEXLine": "29",
+      "FAMS": [
+        "@US02@"
+      ],
+      "FAMSLine": "30",
+      "FAMC": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "119"
+    },
+    "@US02_02@": {
+      "INDILine": "31",
+      "NAME": "Birth After /Marriage/ Age 117",
+      "NAMELine": "32",
+      "BIRT": "1902-01-01",
+      "BIRTLine": "34",
+      "SEX": "M",
+      "SEXLine": "35",
+      "FAMS": [
+        "@US02@"
+      ],
+      "FAMSLine": "36",
+      "FAMC": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "117"
+    },
+    "@US27_01@": {
+      "INDILine": "37",
+      "NAME": "Age /19/",
+      "NAMELine": "38",
+      "BIRT": "1999-10-29",
+      "BIRTLine": "40",
+      "SEX": "M",
+      "SEXLine": "41",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "19"
+    },
+    "@US27_02@": {
+      "INDILine": "42",
+      "NAME": "Age /60/",
+      "NAMELine": "43",
+      "BIRT": "1959-06-20",
+      "BIRTLine": "45",
+      "SEX": "M",
+      "SEXLine": "46",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "60"
+    },
+    "@US27_03@": {
+      "INDILine": "47",
+      "NAME": "Age /2/",
+      "NAMELine": "48",
+      "BIRT": "2017-05-28",
+      "BIRTLine": "50",
+      "SEX": "F",
+      "SEXLine": "51",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "2"
+    },
+    "@US27_04@": {
+      "INDILine": "52",
+      "NAME": "Age /17/",
+      "NAMELine": "53",
+      "BIRT": "2001-12-31",
+      "BIRTLine": "55",
+      "SEX": "F",
+      "SEXLine": "56",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "17"
+    },
+    "@US35_01@": {
+      "INDILine": "57",
+      "NAME": "Recent Birth /Age 0/",
+      "NAMELine": "58",
+      "BIRT": "2019-06-29",
+      "BIRTLine": "60",
+      "SEX": "F",
+      "SEXLine": "61",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "0"
+    },
+    "@US35_02@": {
+      "INDILine": "62",
+      "NAME": "Recent Birth /Age 0/",
+      "NAMELine": "63",
+      "BIRT": "2019-06-04",
+      "BIRTLine": "65",
+      "SEX": "M",
+      "SEXLine": "66",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "0"
+    },
+    "@US36_01@": {
+      "INDILine": "67",
+      "NAME": "Recent /Death/",
+      "NAMELine": "68",
+      "DEAT": "2019-06-29",
+      "DEATLine": "70",
+      "SEX": "M",
+      "SEXLine": "71",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "BIRT": "N/A",
+      "ALIVE": "False",
+      "AGE": "N/A"
+    },
+    "@US36_02@": {
+      "INDILine": "72",
+      "NAME": "Recent /Death/",
+      "NAMELine": "73",
+      "DEAT": "2019-06-10",
+      "DEATLine": "75",
+      "SEX": "F",
+      "SEXLine": "76",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "BIRT": "N/A",
+      "ALIVE": "False",
+      "AGE": "N/A"
+    },
+    "@US38_01@": {
+      "INDILine": "77",
+      "NAME": "Upcoming Birthday /Age 19/",
+      "NAMELine": "78",
+      "BIRT": "1999-07-20",
+      "BIRTLine": "80",
+      "SEX": "F",
+      "SEXLine": "81",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "19"
+    },
+    "@US38_02@": {
+      "INDILine": "82",
+      "NAME": "Upcoming Birthday /Age 218/",
+      "NAMELine": "83",
+      "BIRT": "1800-07-30",
+      "BIRTLine": "85",
+      "SEX": "N/A",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "218"
+    },
+    "@US04_01@": {
+      "INDILine": "104",
+      "NAME": "Marriage Occurs After Divorce of /Spouses/",
+      "NAMELine": "105",
+      "SEX": "M",
+      "SEXLine": "106",
+      "FAMS": [
+        "@US04@"
+      ],
+      "FAMSLine": "107",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    },
+    "@US04_02@": {
+      "INDILine": "108",
+      "NAME": "Marriage Occurs After Divorce of /Spouses/",
+      "NAMELine": "109",
+      "SEX": "F",
+      "SEXLine": "110",
+      "FAMS": [
+        "@US04@"
+      ],
+      "FAMSLine": "111",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    },
+    "@US05_01@": {
+      "INDILine": "119",
+      "NAME": "Marriage Occurs After /Death/",
+      "NAMELine": "120",
+      "SEX": "M",
+      "SEXLine": "121",
+      "DEAT": "1900-12-31",
+      "DEATLine": "123",
+      "FAMS": [
+        "@US05@"
+      ],
+      "FAMSLine": "124",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "ALIVE": "False",
+      "AGE": "N/A"
+    },
+    "@US05_02@": {
+      "INDILine": "125",
+      "NAME": "Marriage Occurs Before /Death/",
+      "NAMELine": "126",
+      "SEX": "F",
+      "SEXLine": "127",
+      "DEAT": "1901-12-31",
+      "DEATLine": "129",
+      "FAMS": [
+        "@US05@"
+      ],
+      "FAMSLine": "130",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "ALIVE": "False",
+      "AGE": "N/A"
+    },
+    "@US39_01@": {
+      "INDILine": "136",
+      "NAME": "Living Couple [HUSB], Anniversary in 30 /Days/",
+      "NAMELine": "137",
+      "SEX": "M",
+      "SEXLine": "138",
+      "FAMS": [
+        "@US39@"
+      ],
+      "FAMSLine": "139",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    },
+    "@US39_02@": {
+      "INDILine": "140",
+      "NAME": "Living Couple [WIFE], Anniversary in 30 /Days/",
+      "NAMELine": "141",
+      "SEX": "F",
+      "SEXLine": "142",
+      "FAMS": [
+        "@US39@"
+      ],
+      "FAMSLine": "143",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    }
+  },
+  "familyData": {
+    "@US01@": {
+      "FAMLine": "86",
+      "HUSB": "@US01_02@",
+      "HUSBLine": "87",
+      "WIFE": "@US01_01@",
+      "WIFELine": "88",
+      "MARR": "3500-01-01",
+      "MARRLine": "90",
+      "DIV": "N/A",
+      "HUSB_NAME": "Death Date After Current /Date/",
+      "WIFE_NAME": "Birth Date After Current /Date/ Age N/A",
+      "CHIL": "N/A"
+    },
+    "@US01_A@": {
+      "FAMLine": "91",
+      "HUSB": "@US01_03@",
+      "HUSBLine": "92",
+      "WIFE": "@US01_04@",
+      "WIFELine": "93",
+      "MARR": "3000-01-01",
+      "MARRLine": "95",
+      "DIV": "4000-01-01",
+      "DIVLine": "97",
+      "HUSB_NAME": "MARR DIV After Current /Date/",
+      "WIFE_NAME": "MARR DIV After Current /Date/",
+      "CHIL": "N/A"
+    },
+    "@US02@": {
+      "FAMLine": "98",
+      "HUSB": "@US02_02@",
+      "HUSBLine": "99",
+      "WIFE": "@US02_01@",
+      "WIFELine": "100",
+      "MARR": "1800-01-01",
+      "MARRLine": "102",
+      "DIV": "N/A",
+      "HUSB_NAME": "Birth After /Marriage/ Age 117",
+      "WIFE_NAME": "Birth After /Marriage/ Age 119",
+      "CHIL": "N/A"
+    },
+    "@US04@": {
+      "FAMLine": "112",
+      "HUSB": "@US04_01@",
+      "HUSBLine": "113",
+      "WIFE": "@US04_02@",
+      "WIFELine": "114",
+      "MARR": "1900-01-01",
+      "MARRLine": "116",
+      "DIV": "1800-01-01",
+      "DIVLine": "118",
+      "HUSB_NAME": "Marriage Occurs After Divorce of /Spouses/",
+      "WIFE_NAME": "Marriage Occurs After Divorce of /Spouses/",
+      "CHIL": "N/A"
+    },
+    "@US05@": {
+      "FAMLine": "131",
+      "HUSB": "@US05_01@",
+      "HUSBLine": "132",
+      "WIFE": "@US05_02@",
+      "WIFELine": "133",
+      "MARR": "1901-03-15",
+      "MARRLine": "135",
+      "DIV": "N/A",
+      "HUSB_NAME": "Marriage Occurs After /Death/",
+      "WIFE_NAME": "Marriage Occurs Before /Death/",
+      "CHIL": "N/A"
+    },
+    "@US39@": {
+      "FAMLine": "144",
+      "HUSB": "@US39_01@",
+      "HUSBLine": "145",
+      "WIFE": "@US39_02@",
+      "WIFELine": "146",
+      "MARR": "2000-07-30",
+      "MARRLine": "148",
+      "DIV": "N/A",
+      "HUSB_NAME": "Living Couple [HUSB], Anniversary in 30 /Days/",
+      "WIFE_NAME": "Living Couple [WIFE], Anniversary in 30 /Days/",
+      "CHIL": "N/A"
+    }
+  }
+}

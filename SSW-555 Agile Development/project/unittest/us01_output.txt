@@ -1,0 +1,66 @@
+--> 1 NOTE github.com/haydendaly/GEDCOM-Parser
+<-- 1|NOTE|N|github.com/haydendaly/GEDCOM-Parser
+--> 0 HEAD
+<-- 0|HEAD|Y|
+--> 1 SOUR Family Echo
+<-- 1|SOUR|N|Family Echo
+--> 2 WWW http://www.familyecho.com/
+<-- 2|WWW|N|http://www.familyecho.com/
+--> 1 FILE My Family
+<-- 1|FILE|N|My Family
+--> 1 DATE 11 MAY 2019
+<-- 1|DATE|N|11 MAY 2019
+--> 1 DEST ANSTFILE
+<-- 1|DEST|N|ANSTFILE
+--> 1 GEDC
+<-- 1|GEDC|N|
+--> 2 VERS 5.5.1
+<-- 2|VERS|N|5.5.1
+--> 2 FORM LINEAGE-LINKED
+<-- 2|FORM|N|LINEAGE-LINKED
+--> 1 SUBM @I1@
+<-- 1|SUBM|N|@I1@
+--> 2 NAME Hayden Daly
+<-- 2|NAME|N|Hayden Daly
+--> 1 SUBN
+<-- 1|SUBN|N|
+--> 1 CHAR UTF-8
+<-- 1|CHAR|N|UTF-8
+--> 0 @I1@ INDI
+<-- 0|INDI|Y|@I1@
+--> 1 NAME Hayden /Daly/
+<-- 1|NAME|Y|Hayden /Daly/
+--> 2 GIVN Hayden
+<-- 2|GIVN|N|Hayden
+--> 2 SURN Daly
+<-- 2|SURN|N|Daly
+--> 2 _MARNM Daly
+<-- 2|_MARNM|N|Daly
+--> 1 SEX M
+<-- 1|SEX|Y|M
+--> 1 BIRT
+<-- 1|BIRT|Y|
+--> 2 DATE 7 MAR 2020
+<-- 2|DATE|Y|7 MAR 2020
+--> 1 FAMC @F1@
+<-- 1|FAMC|Y|@F1@
+--> 0 @I2@ INDI
+<-- 0|INDI|Y|@I2@
+--> 1 NAME Todd /Daly/
+<-- 1|NAME|Y|Todd /Daly/
+--> 2 GIVN Todd
+<-- 2|GIVN|N|Todd
+--> 2 SURN Daly
+<-- 2|SURN|N|Daly
+--> 2 _MARNM Daly
+<-- 2|_MARNM|N|Daly
+--> 1 SEX M
+<-- 1|SEX|Y|M
+--> 1 BIRT
+<-- 1|BIRT|Y|
+--> 2 DATE 24 JUN 2019
+<-- 2|DATE|Y|24 JUN 2019
+--> 1 FAMS @F1@
+<-- 1|FAMS|Y|@F1@
+--> 1 FAMC @F2@
+<-- 1|FAMC|Y|@F2@

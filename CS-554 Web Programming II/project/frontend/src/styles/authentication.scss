@@ -1,0 +1,134 @@
+.forgotPassword {
+	background: none !important;
+	border: none !important;
+	text-decoration: underline;
+  margin-left: 5px;
+  font-size: 15px;
+	color: white;
+}
+
+.forgotPassword:hover {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.authorize {	
+	text-align: left;
+	font-size: 15px;
+	justify-content: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #191919;
+	max-width: 500px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-radius: 20px;
+}
+
+.authorize h1{
+	font-size: 1.8em;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.authorize form{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.authorize .form-control {
+	max-width: 300px;
+}
+
+.authorize .submit-button{
+	// margin-left: 10px;
+	// margin-right: -50%;
+	display: flex;
+	justify-content: center;
+	
+}
+
+.submit-button button{
+	padding-left: 30px;
+	padding-right: 30px;
+	cursor: pointer;
+}
+
+.submit-button button:hover{
+ font-weight: bold;
+}
+
+.social{
+	//text-align: center;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.social button{
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+
+
+.navigation {
+	background: #232323;
+	justify-content: center;
+}
+
+.navigation ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	
+}
+
+.navigation li{
+	display: inline;
+	
+	font-size: 25px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #b8b8b8 !important;
+
+}
+
+.navigation a:link,
+.navigation a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+.active {
+	color: white !important;
+	font-weight: bold;
+}
+
+.error {
+	font-weight: bold;
+	color: red !important;
+}
+
+.spotify-btn {
+	border-radius: 5px;
+	background-color: #1DB954;
+	color: black;
+	border-color: #191919;
+	margin-bottom: 20px;
+}
+
+.spotify-btn:hover {
+	border-radius: 5px;
+	background-color: #1da54d;
+	color: black;
+	border-color: #191919;
+}

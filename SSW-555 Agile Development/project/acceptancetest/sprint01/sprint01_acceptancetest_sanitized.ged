@@ -1,0 +1,101 @@
+0 | NOTE | Y | Sprint 01 Acceptance Test
+0 | NOTE | Y | github.com/haydendaly/GEDCOM-Parser
+0 | NOTE | Y | All Test Cases Created Based on Current Date 29-JUN-2019
+0 | INDI | Y | @US01_01@
+1 | NAME | Y | Birth Date After Current /Date/ Age N/A
+1 | BIRT | Y | 
+2 | DATE | Y | 01 JAN 3000
+1 | SEX | Y | F
+1 | FAMS | Y | @US01@
+0 | INDI | Y | @US01_02@
+1 | NAME | Y | Death Date After Current /Date/
+1 | DEAT | Y | 
+2 | DATE | Y | 31 DEC 4000
+1 | SEX | Y | M
+1 | FAMS | Y | @US01@
+0 | INDI | Y | @US01_03@
+1 | NAME | Y | MARR DIV After Current /Date/
+1 | SEX | Y | M
+1 | FAMS | Y | @US01_A@
+0 | INDI | Y | @US01_04@
+1 | NAME | Y | MARR DIV After Current /Date/
+1 | SEX | Y | F
+1 | FAMS | Y | @US01_A@
+0 | INDI | Y | @US02_01@
+1 | NAME | Y | Birth After /Marriage/ Age 119
+1 | BIRT | Y | 
+2 | DATE | Y | 01 JAN 1900
+1 | SEX | Y | F
+1 | FAMS | Y | @US_02@
+0 | INDI | Y | @US02_02@
+1 | NAME | Y | Birth After /Marriage/ Age 117
+1 | BIRT | Y | 
+2 | DATE | Y | 01 JAN 1902
+1 | SEX | Y | M
+1 | FAMS | Y | @US_02@
+0 | INDI | Y | @US27_01@
+1 | NAME | Y | Age /19/
+1 | BIRT | Y | 
+2 | DATE | Y | 29 OCT 1999
+1 | SEX | Y | M
+0 | INDI | Y | @US27_02@
+1 | NAME | Y | Age /60/
+1 | BIRT | Y | 
+2 | DATE | Y | 20 JUN 1959
+1 | SEX | Y | M
+0 | INDI | Y | @US27_03@
+1 | NAME | Y | Age /2/
+1 | BIRT | Y | 
+2 | DATE | Y | 28 MAY 2017
+1 | SEX | Y | F
+0 | INDI | Y | @US27_04@
+1 | NAME | Y | Age /17/
+1 | BIRT | Y | 
+2 | DATE | Y | 31 DEC 2001
+1 | SEX | Y | F
+0 | INDI | Y | @US35_01@
+1 | NAME | Y | Recent Birth /Age 0/
+1 | BIRT | Y | 
+2 | DATE | Y | 29 JUN 2019
+1 | SEX | Y | F
+0 | INDI | Y | @US35_02@
+1 | NAME | Y | Recent Birth /Age 0/
+1 | BIRT | Y | 
+2 | DATE | Y | 04 JUN 2019
+1 | SEX | Y | M
+0 | INDI | Y | @US36_01@
+1 | NAME | Y | Recent /Death/
+1 | DEAT | Y | 
+2 | DATE | Y | 29 JUN 2019
+1 | SEX | Y | M
+0 | INDI | Y | @US36_02@
+1 | NAME | Y | Recent /Death/
+1 | DEAT | Y | 
+2 | DATE | Y | 04 JUN 2019
+1 | SEX | Y | F
+0 | INDI | Y | @US38_01@
+1 | NAME | Y | Upcoming Birthday /Age 19/
+1 | BIRT | Y | 
+2 | DATE | Y | 01 JUL 1999
+1 | SEX | Y | F
+0 | INDI | Y | @US38_02@
+1 | NAME | Y | Upcoming Birthday /Age 218/
+1 | BIRT | Y | 
+2 | DATE | Y | 25 JUL 1800
+0 | FAM | Y | @US01@
+1 | HUSB | Y | @US01_02@
+1 | WIFE | Y | @US01_01@
+1 | MARR | Y | 
+2 | DATE | Y | 01 JAN 3500
+0 | FAM | Y | @US01_A@
+1 | HUSB | Y | @US01_03@
+1 | WIFE | Y | @US01_04@
+1 | MARR | Y | 
+2 | DATE | Y | 01 JAN 3000
+1 | DIV | Y | 
+2 | DATE | Y | 31 DEC 4000
+0 | FAM | Y | @US02@
+1 | HUSB | Y | @US02_02@
+1 | WIFE | Y | @US02_01@
+1 | MARR | Y | 
+2 | DATE | Y | 01 JAN 1800

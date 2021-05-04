@@ -1,0 +1,24 @@
+1.2 The three main types of comments used in Java are:
+
+// insert text -- this one is a single line comment and will simply ignore all text following it on that line
+/* insert text */ -- this one can be multilined and will ignore everything inbetween the two boundaries.
+/** insert text */ -- this one is used for "documentation" and works pretty much the same way as the multiline but allows for being converted into a documentat.
+
+1.5 The difference between prefix and postfix increment operators are is when the value is returned. The prefix will return the value before it has been incremented while the postifx will return the already incremented value.
+
+1.9 Method overloading refers to allowing a class to have multiple methods with the same name. The method used is determined by the arguments provided.
+
+1.11
+
+a = b++ + c++;
+a,b,c = 13, 6, 9
+a = b++ + ++c;
+a,b,c = 16, 7, 10
+a = ++b + c++;
+a,b,c 18,8,11
+a = ++b + ++c;
+a,b,c = 21,9,12
+
+1.13
+
+The update statement in the while loop can be conditional on what happens within while in the for loop, it is external.

@@ -1,0 +1,5 @@
+backend/private.js
+backend/.git
+backend/.gitignore
+node_modules/
+frontend/bookClub/

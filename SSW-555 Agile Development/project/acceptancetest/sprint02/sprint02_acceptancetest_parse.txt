@@ -1,0 +1,296 @@
+--> 0 NOTE Sprint 01 and 02 Acceptance Test
+<-- 0 | NOTE | Y | Sprint 01 and 02 Acceptance Test
+--> 0 NOTE github.com/haydendaly/GEDCOM-Parser
+<-- 0 | NOTE | Y | github.com/haydendaly/GEDCOM-Parser
+--> 0 NOTE All Test Cases Created Based on Current Date 07-JUL-2019
+<-- 0 | NOTE | Y | All Test Cases Created Based on Current Date 07-JUL-2019
+--> 0 NOTE Mainly Sprint 01 Acceptance Test Data
+<-- 0 | NOTE | Y | Mainly Sprint 01 Acceptance Test Data
+--> 0 @US01_01@ INDI
+<-- 0 | INDI | Y | @US01_01@
+--> 1 NAME Birth Date After Current /Date/ Age N/A
+<-- 1 | NAME | Y | Birth Date After Current /Date/ Age N/A
+--> 1 BIRT
+<-- 1 | BIRT | Y | 
+--> 2 DATE 01 JAN 3000
+<-- 2 | DATE | Y | 01 JAN 3000
+--> 1 SEX F
+<-- 1 | SEX | Y | F
+--> 1 FAMS @US01@
+<-- 1 | FAMS | Y | @US01@
+--> 0 @US01_02@ INDI
+<-- 0 | INDI | Y | @US01_02@
+--> 1 NAME Death Date After Current /Date/
+<-- 1 | NAME | Y | Death Date After Current /Date/
+--> 1 DEAT
+<-- 1 | DEAT | Y | 
+--> 2 DATE 31 DEC 4000
+<-- 2 | DATE | Y | 31 DEC 4000
+--> 1 SEX M
+<-- 1 | SEX | Y | M
+--> 1 FAMS @US01@
+<-- 1 | FAMS | Y | @US01@
+--> 0 @US01_03@ INDI
+<-- 0 | INDI | Y | @US01_03@
+--> 1 NAME MARR DIV After Current /Date/
+<-- 1 | NAME | Y | MARR DIV After Current /Date/
+--> 1 SEX M
+<-- 1 | SEX | Y | M
+--> 1 FAMS @US01_A@
+<-- 1 | FAMS | Y | @US01_A@
+--> 0 @US01_04@ INDI
+<-- 0 | INDI | Y | @US01_04@
+--> 1 NAME MARR DIV After Current /Date/
+<-- 1 | NAME | Y | MARR DIV After Current /Date/
+--> 1 SEX F
+<-- 1 | SEX | Y | F
+--> 1 FAMS @US01_A@
+<-- 1 | FAMS | Y | @US01_A@
+--> 0 @US02_01@ INDI
+<-- 0 | INDI | Y | @US02_01@
+--> 1 NAME Birth After /Marriage/ Age 119
+<-- 1 | NAME | Y | Birth After /Marriage/ Age 119
+--> 1 BIRT
+<-- 1 | BIRT | Y | 
+--> 2 DATE 01 JAN 1900
+<-- 2 | DATE | Y | 01 JAN 1900
+--> 1 SEX F
+<-- 1 | SEX | Y | F
+--> 1 FAMS @US02@
+<-- 1 | FAMS | Y | @US02@
+--> 0 @US02_02@ INDI
+<-- 0 | INDI | Y | @US02_02@
+--> 1 NAME Birth After /Marriage/ Age 117
+<-- 1 | NAME | Y | Birth After /Marriage/ Age 117
+--> 1 BIRT
+<-- 1 | BIRT | Y | 
+--> 2 DATE 01 JAN 1902
+<-- 2 | DATE | Y | 01 JAN 1902
+--> 1 SEX M
+<-- 1 | SEX | Y | M
+--> 1 FAMS @US02@
+<-- 1 | FAMS | Y | @US02@
+--> 0 @US27_01@ INDI
+<-- 0 | INDI | Y | @US27_01@
+--> 1 NAME Age /19/
+<-- 1 | NAME | Y | Age /19/
+--> 1 BIRT
+<-- 1 | BIRT | Y | 
+--> 2 DATE 29 OCT 1999
+<-- 2 | DATE | Y | 29 OCT 1999
+--> 1 SEX M
+<-- 1 | SEX | Y | M
+--> 0 @US27_02@ INDI
+<-- 0 | INDI | Y | @US27_02@
+--> 1 NAME Age /60/
+<-- 1 | NAME | Y | Age /60/
+--> 1 BIRT
+<-- 1 | BIRT | Y | 
+--> 2 DATE 20 JUN 1959
+<-- 2 | DATE | Y | 20 JUN 1959
+--> 1 SEX M
+<-- 1 | SEX | Y | M
+--> 0 @US27_03@ INDI
+<-- 0 | INDI | Y | @US27_03@
+--> 1 NAME Age /2/
+<-- 1 | NAME | Y | Age /2/
+--> 1 BIRT
+<-- 1 | BIRT | Y | 
+--> 2 DATE 28 MAY 2017
+<-- 2 | DATE | Y | 28 MAY 2017
+--> 1 SEX F
+<-- 1 | SEX | Y | F
+--> 0 @US27_04@ INDI
+<-- 0 | INDI | Y | @US27_04@
+--> 1 NAME Age /17/
+<-- 1 | NAME | Y | Age /17/
+--> 1 BIRT
+<-- 1 | BIRT | Y | 
+--> 2 DATE 31 DEC 2001
+<-- 2 | DATE | Y | 31 DEC 2001
+--> 1 SEX F
+<-- 1 | SEX | Y | F
+--> 0 @US35_01@ INDI
+<-- 0 | INDI | Y | @US35_01@
+--> 1 NAME Recent Birth /Age 0/
+<-- 1 | NAME | Y | Recent Birth /Age 0/
+--> 1 BIRT
+<-- 1 | BIRT | Y | 
+--> 2 DATE 29 JUN 2019
+<-- 2 | DATE | Y | 29 JUN 2019
+--> 1 SEX F
+<-- 1 | SEX | Y | F
+--> 0 @US35_02@ INDI
+<-- 0 | INDI | Y | @US35_02@
+--> 1 NAME Recent Birth /Age 0/
+<-- 1 | NAME | Y | Recent Birth /Age 0/
+--> 1 BIRT
+<-- 1 | BIRT | Y | 
+--> 2 DATE 04 JUN 2019
+<-- 2 | DATE | Y | 04 JUN 2019
+--> 1 SEX M
+<-- 1 | SEX | Y | M
+--> 0 @US36_01@ INDI
+<-- 0 | INDI | Y | @US36_01@
+--> 1 NAME Recent /Death/
+<-- 1 | NAME | Y | Recent /Death/
+--> 1 DEAT
+<-- 1 | DEAT | Y | 
+--> 2 DATE 29 JUN 2019
+<-- 2 | DATE | Y | 29 JUN 2019
+--> 1 SEX M
+<-- 1 | SEX | Y | M
+--> 0 @US36_02@ INDI
+<-- 0 | INDI | Y | @US36_02@
+--> 1 NAME Recent /Death/
+<-- 1 | NAME | Y | Recent /Death/
+--> 1 DEAT
+<-- 1 | DEAT | Y | 
+--> 2 DATE 10 JUN 2019
+<-- 2 | DATE | Y | 10 JUN 2019
+--> 1 SEX F
+<-- 1 | SEX | Y | F
+--> 0 @US38_01@ INDI
+<-- 0 | INDI | Y | @US38_01@
+--> 1 NAME Upcoming Birthday /Age 19/
+<-- 1 | NAME | Y | Upcoming Birthday /Age 19/
+--> 1 BIRT
+<-- 1 | BIRT | Y | 
+--> 2 DATE 20 JUL 1999
+<-- 2 | DATE | Y | 20 JUL 1999
+--> 1 SEX F
+<-- 1 | SEX | Y | F
+--> 0 @US38_02@ INDI
+<-- 0 | INDI | Y | @US38_02@
+--> 1 NAME Upcoming Birthday /Age 218/
+<-- 1 | NAME | Y | Upcoming Birthday /Age 218/
+--> 1 BIRT
+<-- 1 | BIRT | Y | 
+--> 2 DATE 30 JUL 1800
+<-- 2 | DATE | Y | 30 JUL 1800
+--> 0 @US01@ FAM
+<-- 0 | FAM | Y | @US01@
+--> 1 HUSB @US01_02@
+<-- 1 | HUSB | Y | @US01_02@
+--> 1 WIFE @US01_01@
+<-- 1 | WIFE | Y | @US01_01@
+--> 1 MARR
+<-- 1 | MARR | Y | 
+--> 2 DATE 01 JAN 3500
+<-- 2 | DATE | Y | 01 JAN 3500
+--> 0 @US01_A@ FAM
+<-- 0 | FAM | Y | @US01_A@
+--> 1 HUSB @US01_03@
+<-- 1 | HUSB | Y | @US01_03@
+--> 1 WIFE @US01_04@
+<-- 1 | WIFE | Y | @US01_04@
+--> 1 MARR
+<-- 1 | MARR | Y | 
+--> 2 DATE 01 JAN 3000
+<-- 2 | DATE | Y | 01 JAN 3000
+--> 1 DIV
+<-- 1 | DIV | Y | 
+--> 2 DATE 31 DEC 4000
+<-- 2 | DATE | Y | 31 DEC 4000
+--> 0 @US02@ FAM
+<-- 0 | FAM | Y | @US02@
+--> 1 HUSB @US02_02@
+<-- 1 | HUSB | Y | @US02_02@
+--> 1 WIFE @US02_01@
+<-- 1 | WIFE | Y | @US02_01@
+--> 1 MARR
+<-- 1 | MARR | Y | 
+--> 2 DATE 01 JAN 1800
+<-- 2 | DATE | Y | 01 JAN 1800
+--> 0 NOTE Mainly Sprint 02 Acceptance Test Data
+<-- 0 | NOTE | Y | Mainly Sprint 02 Acceptance Test Data
+--> 0 @US04_01@ INDI
+<-- 0 | INDI | Y | @US04_01@
+--> 1 NAME Marriage Occurs After Divorce of /Spouses/
+<-- 1 | NAME | Y | Marriage Occurs After Divorce of /Spouses/
+--> 1 SEX M
+<-- 1 | SEX | Y | M
+--> 1 FAMS @US04@
+<-- 1 | FAMS | Y | @US04@
+--> 0 @US04_02@ INDI
+<-- 0 | INDI | Y | @US04_02@
+--> 1 NAME Marriage Occurs After Divorce of /Spouses/
+<-- 1 | NAME | Y | Marriage Occurs After Divorce of /Spouses/
+--> 1 SEX F
+<-- 1 | SEX | Y | F
+--> 1 FAMS @US04@
+<-- 1 | FAMS | Y | @US04@
+--> 0 @US04@ FAM
+<-- 0 | FAM | Y | @US04@
+--> 1 HUSB @US04_01@
+<-- 1 | HUSB | Y | @US04_01@
+--> 1 WIFE @US04_02@
+<-- 1 | WIFE | Y | @US04_02@
+--> 1 MARR
+<-- 1 | MARR | Y | 
+--> 2 DATE 01 JAN 1900
+<-- 2 | DATE | Y | 01 JAN 1900
+--> 1 DIV
+<-- 1 | DIV | Y | 
+--> 2 DATE 01 JAN 1800
+<-- 2 | DATE | Y | 01 JAN 1800
+--> 0 @US05_01@ INDI
+<-- 0 | INDI | Y | @US05_01@
+--> 1 NAME Marriage Occurs After /Death/
+<-- 1 | NAME | Y | Marriage Occurs After /Death/
+--> 1 SEX M
+<-- 1 | SEX | Y | M
+--> 1 DEAT
+<-- 1 | DEAT | Y | 
+--> 2 DATE 31 DEC 1900
+<-- 2 | DATE | Y | 31 DEC 1900
+--> 1 FAMS @US05@
+<-- 1 | FAMS | Y | @US05@
+--> 0 @US05_02@ INDI
+<-- 0 | INDI | Y | @US05_02@
+--> 1 NAME Marriage Occurs Before /Death/
+<-- 1 | NAME | Y | Marriage Occurs Before /Death/
+--> 1 SEX F
+<-- 1 | SEX | Y | F
+--> 1 DEAT
+<-- 1 | DEAT | Y | 
+--> 2 DATE 31 DEC 1901
+<-- 2 | DATE | Y | 31 DEC 1901
+--> 1 FAMS @US05@
+<-- 1 | FAMS | Y | @US05@
+--> 0 @US05@ FAM
+<-- 0 | FAM | Y | @US05@
+--> 1 HUSB @US05_01@
+<-- 1 | HUSB | Y | @US05_01@
+--> 1 WIFE @US05_02@
+<-- 1 | WIFE | Y | @US05_02@
+--> 1 MARR
+<-- 1 | MARR | Y | 
+--> 2 DATE 15 MAR 1901
+<-- 2 | DATE | Y | 15 MAR 1901
+--> 0 @US39_01@ INDI
+<-- 0 | INDI | Y | @US39_01@
+--> 1 NAME Living Couple [HUSB], Anniversary in 30 /Days/
+<-- 1 | NAME | Y | Living Couple [HUSB], Anniversary in 30 /Days/
+--> 1 SEX M
+<-- 1 | SEX | Y | M
+--> 1 FAMS @US39@
+<-- 1 | FAMS | Y | @US39@
+--> 0 @US39_02@ INDI
+<-- 0 | INDI | Y | @US39_02@
+--> 1 NAME Living Couple [WIFE], Anniversary in 30 /Days/
+<-- 1 | NAME | Y | Living Couple [WIFE], Anniversary in 30 /Days/
+--> 1 SEX F
+<-- 1 | SEX | Y | F
+--> 1 FAMS @US39@
+<-- 1 | FAMS | Y | @US39@
+--> 0 @US39@ FAM
+<-- 0 | FAM | Y | @US39@
+--> 1 HUSB @US39_01@
+<-- 1 | HUSB | Y | @US39_01@
+--> 1 WIFE @US39_02@
+<-- 1 | WIFE | Y | @US39_02@
+--> 1 MARR
+<-- 1 | MARR | Y | 
+--> 2 DATE 30 JUL 2000
+<-- 2 | DATE | Y | 30 JUL 2000

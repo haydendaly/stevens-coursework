@@ -1,0 +1,43 @@
+# ASPLOS 2021
+
+For my meetup requirement, I attended the 2021 ASPLOS Conference which is focused on architectural support for programming languages and operating systems. The primary reason for me taking this course is to familiarize myself in the management of systems and use it to better understand systems architecting. For this reason exactly the conference, and more specifically the section on microservices, stuck out to me. I started by attending a paper presentation on microservices from the University of Texas at Austin by Zhipeng Jia and Emmett Witchel. The paper is available at https://dl.acm.org/doi/abs/10.1145/3445814.3446701 .
+
+## Nightcore: Efficient and Scalable Serverless Computing for Latency-Sensitive, Interactive Microservices
+
+### Servless Microservices
+
+Microservices have gained increasing popularity in software architectures for building flexible, large-scale, online services. Specifically serverless funtions (FaaS), make it extremely easy to create statelss functions in the cloud which can be RPC handlers compared to more complicated containerized RPC servers. The benefit of these is they have high elasticity and good pricing as well as contribute to a composable software design. However, the primary downside of these serverless functions is they have a millisecond start up delay on runtime making them slow down high performing services. Examples of these are AWS Lambda which are 11.5x slower than RPC servers at media latency.
+
+### Performance Goals for Nightcore
+
+Function Execution time must be in 100s of microseconds, invocation latency must be under 100 microseconds, and should support ~100K/s for invocation rate.
+
+### Vulnerable to Killer Microseconds
+
+The software is vulnerable to a handful of microsecond-scale events in networking, TCP/IP stack, RPC protocol, context switch, thread scheduling, and more outlined in `Attack of the Killer Microseconds` from the March 2017 Communications of the ACM proceeding.
+
+### Nightcore Design
+
+#### Techniques
+
+* Optimize locality of internal function calls
+* High optimizations for local I/Os
+    * Low-latency message channels
+    * Event-driven concurrency
+* Managing per-microservice concurrency to mitigate load variation
+
+#### FaaS Runtime
+
+A request is made the Frontend to load balanced backends as adopted by Apache OpenWhisk and OpenFaaS. This architecture is limited in that it communicates back to the frontend but Nightcore optimizes locality for internal function call by chaining functions with internal function calls in the backend infrastructure.
+
+#### Nightcore Overview
+
+API gateway to per-function dispatching queues on a worker server which then direct invocations to Nightcore's runtime library which does fast paths for internal function calls. This can be done in a VM or Docker container. The speaker provides an example run through of an internal function request. They created IPC primitive for function worker I/Os that creates a low latency message channel which is 4x quicker than standard gRPC.
+
+#### Benchmarks / Performance
+
+Compared to RPC servers and OpenFaaS with C++, Go, Node.js, and Python using EC2 instances. They use trial applications including a Social Network, Movie Reviewing Platform, Hotel Reservation, and Hipster Shop. They use these example services to measure throughput and Nightcore scores best on all their measurements.
+
+## Conclusion / Takeaways
+
+This is important to system administrators as they wear many hats and should understand the system architectures they are working with. If latency is a large problem in your microservice architecture, you can try to optimize using the techniques they showed or just by using their runtime. Also, I attend a handful of other cool events including in depth papers on programming languages and a Q&A with Kathyn McKinley (a Principal Research Scientist at Google) where she talked about cloud, parallel computing, and so much more. Overall, i'd recommend a conference like this to anyone in the course which was a steal for only $15.

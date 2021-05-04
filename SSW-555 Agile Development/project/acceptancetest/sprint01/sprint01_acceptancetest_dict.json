@@ -1,0 +1,205 @@
+{
+  "individualData": {
+    "@US01_01@": {
+      "NAME": "Birth Date After Current /Date/ Age N/A",
+      "BIRT": "3000-01-01",
+      "SEX": "F",
+      "FAMS": [
+        "@US01@"
+      ],
+      "FAMC": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    },
+    "@US01_02@": {
+      "NAME": "Death Date After Current /Date/",
+      "DEAT": "4000-12-31",
+      "SEX": "M",
+      "FAMS": [
+        "@US01@"
+      ],
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "ALIVE": "False",
+      "AGE": "N/A"
+    },
+    "@US01_03@": {
+      "NAME": "MARR DIV After Current /Date/",
+      "SEX": "M",
+      "FAMS": [
+        "@US01_A@"
+      ],
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    },
+    "@US01_04@": {
+      "NAME": "MARR DIV After Current /Date/",
+      "SEX": "F",
+      "FAMS": [
+        "@US01_A@"
+      ],
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    },
+    "@US02_01@": {
+      "NAME": "Birth After /Marriage/ Age 119",
+      "BIRT": "1900-01-01",
+      "SEX": "F",
+      "FAMS": [
+        "@US_02@"
+      ],
+      "FAMC": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "119"
+    },
+    "@US02_02@": {
+      "NAME": "Birth After /Marriage/ Age 117",
+      "BIRT": "1902-01-01",
+      "SEX": "M",
+      "FAMS": [
+        "@US_02@"
+      ],
+      "FAMC": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "117"
+    },
+    "@US27_01@": {
+      "NAME": "Age /19/",
+      "BIRT": "1999-10-29",
+      "SEX": "M",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "19"
+    },
+    "@US27_02@": {
+      "NAME": "Age /60/",
+      "BIRT": "1959-06-20",
+      "SEX": "M",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "60"
+    },
+    "@US27_03@": {
+      "NAME": "Age /2/",
+      "BIRT": "2017-05-28",
+      "SEX": "F",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "2"
+    },
+    "@US27_04@": {
+      "NAME": "Age /17/",
+      "BIRT": "2001-12-31",
+      "SEX": "F",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "17"
+    },
+    "@US35_01@": {
+      "NAME": "Recent Birth /Age 0/",
+      "BIRT": "2019-06-29",
+      "SEX": "F",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "0"
+    },
+    "@US35_02@": {
+      "NAME": "Recent Birth /Age 0/",
+      "BIRT": "2019-06-04",
+      "SEX": "M",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "0"
+    },
+    "@US36_01@": {
+      "NAME": "Recent /Death/",
+      "DEAT": "2019-06-29",
+      "SEX": "M",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "BIRT": "N/A",
+      "ALIVE": "False",
+      "AGE": "N/A"
+    },
+    "@US36_02@": {
+      "NAME": "Recent /Death/",
+      "DEAT": "2019-06-04",
+      "SEX": "F",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "BIRT": "N/A",
+      "ALIVE": "False",
+      "AGE": "N/A"
+    },
+    "@US38_01@": {
+      "NAME": "Upcoming Birthday /Age 19/",
+      "BIRT": "1999-07-01",
+      "SEX": "F",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "19"
+    },
+    "@US38_02@": {
+      "NAME": "Upcoming Birthday /Age 218/",
+      "BIRT": "1800-07-25",
+      "SEX": "N/A",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "218"
+    }
+  },
+  "familyData": {
+    "@US01@": {
+      "HUSB": "@US01_02@",
+      "WIFE": "@US01_01@",
+      "MARR": "3500-01-01",
+      "DIV": "N/A",
+      "HUSB_NAME": "Death Date After Current /Date/",
+      "WIFE_NAME": "Birth Date After Current /Date/ Age N/A",
+      "CHIL": "N/A"
+    },
+    "@US01_A@": {
+      "HUSB": "@US01_03@",
+      "WIFE": "@US01_04@",
+      "MARR": "3000-01-01",
+      "DIV": "4000-01-01",
+      "HUSB_NAME": "MARR DIV After Current /Date/",
+      "WIFE_NAME": "MARR DIV After Current /Date/",
+      "CHIL": "N/A"
+    },
+    "@US02@": {
+      "HUSB": "@US02_02@",
+      "WIFE": "@US02_01@",
+      "MARR": "1800-01-01",
+      "DIV": "N/A",
+      "HUSB_NAME": "Birth After /Marriage/ Age 117",
+      "WIFE_NAME": "Birth After /Marriage/ Age 119",
+      "CHIL": "N/A"
+    }
+  }
+}

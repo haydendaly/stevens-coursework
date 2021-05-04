@@ -1,0 +1,158 @@
+(3 points) When all keys have been sorted in reverse order, what is the running time of
+insertion sort: O(n^2)
+mergesort: O(nlogn)
+quicksort: O(nlogn)
+
+(3 points) Sort the sequence 8, 1, 4, 5, 9, 2, 6, 5 by using
+insertion sort:
+
+| 8 1 4 5 9 2 6 5
+1 | 8 4 5 9 2 6 5
+1 8 | 4 5 9 2 6 5
+1 4 8 | 5 9 2 6 5
+1 4 5 8 | 9 2 6 5
+1 4 5 8 9 | 2 6 5
+1 2 4 5 8 9 | 6 5
+1 2 4 5 6 8 9 | 5
+1 2 4 5 5 6 8 9 |
+
+mergesort
+
+8 1 4 5 9 2 6 5
+8 1 4 5 | 9 2 6 5
+8 1 | 4 5 | 9 2 | 6 5
+8 | 1 | 4 | 5 | 9 | 2 | 6 | 5
+1 8 | 4 5 | 2 9 | 5 6
+1 4 5 8 | 2 5 6 9
+1 2 4 5 5 6 8 9
+
+quicksort, with the middle element as pivot and no cutoff (show all steps)
+
+8 1 4 5 9 2 6 5 pivot = 5
+1 4 2 5 pivot = 4 | 5 | 8 9 6 pivot = 9 recursively apply quicksort
+1 2 4 5 | 5 | 6 8 9
+combine
+1 2 4 5 5 6 8 9
+
+(4 points) An array contains N numbers, and you want to determine whether two of the numbers sum to a give number K. For instance, if the input is 8, 4, 1, 6 and K is 10, the answer is yes (4 and 6). A number may be used twice. Do the following:
+Give an O(N^2) algorithm to solve this problem;
+
+def alg(arr, sum):
+  for a in arr:
+    for b in arr:
+      if a + b == sum:
+        print(a, b)
+        return True
+  return False
+
+Given an O(NlogN) algorithm to solve this problem. (Hint: sort the items first. After doing so, you can solve the problem in linear time.)
+
+def alg(arr, sum)
+  arr = quicksort(arr)
+  for a in arr:
+    x = sum - a
+    if binarysearch(x):
+      print(a, b)
+      return True
+  return False
+
+(10 points) Two words are anagrams if they contain the same letters in the same frequency. For instance, stale and least are anagrams of each other. A simple way to check this is to sort the characters in each word; if you get the same answer, the words are anagrams of each other.
+
+Write a method that takes an array of Strings and returns the largest group of words that are anagrams of each other. Do to this, sort the array with a Comparator that compares the sorted character representation of the words. After the sort, any group of words that are anagrams of each other will be adjacent in the array. Test you method by writing a program that use words read from a file.
+
+// I have written similar code for another assignment so I just modified it for this one
+
+import java.util.Map;
+import java.util.ArrayList;
+import java.io.IOException;
+import java.io.FileInputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+
+public class Anagrams {
+
+	final Integer[] primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101};
+	Map<Character, Integer> letterTable;
+	Map<Long, ArrayList<String>> anagramTable;
+
+	public Anagrams() {
+		buildLetterTable();
+		anagramTable = new HashMap<Long, ArrayList<String>>();
+	}
+
+	private void buildLetterTable() {
+		letterTable = new HashMap<Character, Integer>();
+		for (char start = 'a'; start <= 'z'; start++) {
+			letterTable.put(start, primes[Character.getNumericValue(start)-10]);
+		}
+	}
+
+	private void addWord(String s) {
+		long code = myHashCode(s);
+		if(anagramTable.containsKey(code)) {
+			anagramTable.get(code).add(s);
+		} else {
+			ArrayList<String> newList = new ArrayList<String>();
+			newList.add(s);
+			anagramTable.put(code, newList);
+		}
+	}
+
+	private Long myHashCode(String s) {
+		long code = 1;
+		for (char letter : s.toCharArray()) {
+			code *= letterTable.get(letter);
+		}
+		return code;
+	}
+
+  // this method was written by my cs 570 professor
+	private void processFile(String s) throws IOException {
+		FileInputStream fstream = new FileInputStream(s);
+		BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+		String strLine;
+		while ((strLine = br.readLine()) != null) {
+			this.addWord(strLine);
+		}
+		br.close();
+	}
+
+	private ArrayList<Map.Entry<Long, ArrayList<String>>> getMaxEntries() {
+		int size = 0;
+		ArrayList<Map.Entry<Long,ArrayList<String>>> maxList = new ArrayList<Map.Entry<Long,ArrayList<String>>>();
+		for (Map.Entry<Long,ArrayList<String>> pair : anagramTable.entrySet()) {
+			int entrySize = pair.getValue().size();
+			if(entrySize > size) {
+				maxList.clear();
+				maxList.add(pair);
+				size = entrySize;
+			} else if(entrySize == size) {
+				maxList.add(pair);
+			}
+		}
+		return maxList;
+	}
+
+	public static void main(String[] args) {
+		Anagrams a = new Anagrams ();
+		final long startTime = System.nanoTime(); try {
+			a.processFile("words_alpha.txt");
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		ArrayList<Map.Entry<Long, ArrayList<String>>> maxEntries = a.getMaxEntries();
+		final long estimatedTime = System.nanoTime() - startTime;
+		final double seconds = ((double) estimatedTime/1000000000);
+		long key = 0;
+		ArrayList<String> listMaxAnagrams = new ArrayList<String>();
+		for (Map.Entry<Long, ArrayList<String>> entry : maxEntries) {
+			key = entry.getKey();
+			listMaxAnagrams = entry.getValue();
+		}
+		System.out.println("Elapsed Time: " + seconds);
+		System.out.println("Key of max anagrams: " + key);
+		System.out.println("List of max anagrams: " + listMaxAnagrams);
+		System.out.println("Length of list of max anagrams: " + listMaxAnagrams.size());
+	}
+}

@@ -1,0 +1,33 @@
+1 NOTE github.com/haydendaly/GEDCOM-Parser
+0 HEAD
+1 SOUR Family Echo
+2 WWW http://www.familyecho.com/
+1 FILE My Family
+1 DATE 11 MAY 2019
+1 DEST ANSTFILE
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 SUBM @I1@
+2 NAME Hayden Daly
+1 SUBN
+1 CHAR UTF-8
+0 @I1@ INDI
+1 NAME Hayden /Daly/
+2 GIVN Hayden
+2 SURN Daly
+2 _MARNM Daly
+1 SEX M
+1 BIRT
+2 DATE 7 MAR 2020
+1 FAMC @F1@
+0 @I2@ INDI
+1 NAME Todd /Daly/
+2 GIVN Todd
+2 SURN Daly
+2 _MARNM Daly
+1 SEX M
+1 BIRT
+2 DATE 24 JUN 2019
+1 FAMS @F1@
+1 FAMC @F2@
