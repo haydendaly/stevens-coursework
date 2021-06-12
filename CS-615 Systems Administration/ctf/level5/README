@@ -1,0 +1,81 @@
+myrslok - anteater in swedish
+
+- Instructions mentioned groups, so tried looking through group(5)
+- `man groupinfo` gave a file called /etc/usermgmt.conf, but it was a dead end, no sign of pilosa.
+- NetBSD site says to check /etc/group, pilosa's there.
+- pilosa's gid = 400
+- `usermod -G [groupname] [username]` is used to add users to a secondary group, testing...
+- **** `usermod` needs to be run as root. ****
+- Asks for a password, trying `su` tells use we're not in the 2ndary group, "wheel"
+	- Either we look for a way to add ourselves to wheel, or get access to a root user.
+
+- Trying other lvl's methods for gaining permissions (like with pilosa and date) didn't work out.
+- gaeb wasn't on cs615ctf either.
+- `cat /etc/passwd` shows a user named "cyclopes" with a "Silky Anteater" description.
+- Trying to cd into /home/cyclopes is giving us permission errors, meaning it has higher permissions than us. Hm...
+
+- Looking through `ls -lRar` for any hints.
+
+- Found that cyclopes made files in /var/www that are read-only that contains "Pwnd by <code>", meaning we're on the right track with cyclopes.
+
+- found something from quadcore, teehee
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOUTjy86BEZsm08gQ3/t1L7/4A6XBHuJNU9UQ3T+PoH5 root@netbsd
+- looks like an ssh key
+- red herring?
+
+HINT: Look at what other users currently logged in on the system are doing by e.g., running 'w'.  The manual pages should get you to be able to change your current primary group without the need to become root.
+
+- `w` shows us that jschauma is doing `man newgrp`.
+- `newgrp` is the command that changes the primary group of a user
+- `newgrp 400` and entering `myrslok` gives us a successful run, but it's ultimately not giving us access to editing /var/www/index.html or any of the group files in /etc/(group, passwd, master.passwd).
+	- Makes a new shell, I'm 10 nested shells deep babyyyyy.
+
+- 30 minutes later jschauma opened up `man su`.
+- `su cyclopes` asks for a passwd, but `myrslok` isn't the one.
+- `su :pilosa` asks for Group Password:, entering `myrslok` gives no error.
+	- This creates a new shell too. Wheeeeeeeeeee!
+
+- We can get into /home/cyclopes now that we're in the pilosa group, albeit temporarily.
+- ebs-restore.pub contains the ssh key that we found in quadcore earlier.
+
+- `tar -cf ham.tar index.html` works, why is taring different between UNIXs, ffs
+- Running `./ebs-restore ham.tar` gave an output, but no return value.
+- Also really sus of the ebs-restore.pub file.
+
+- Looking through /var/log/ebs-restore shows a lot of attempts, how do we get 'on the map'?
+- A lot of attempts with "cs615asa.netmeister.org,18.231.189.135"
+- Same for "cs615asa.netmeister.org,2600:1f18:65fd:6e00:18a9:c8ee:6092:96e1"
+- Seems like ebs-restore is using an SSH connection into cs615asa, so we've been trying to hardcode a hostname into the ebs-restore script itself.
+	- What's the deal with this .pub file?
+
+- Copied the script into our home directory to edit.
+- Tried adding `-i key`, messing with hostname, port number, and cd directory
+	- Still ultimately having issues with sshing into cs615asa.
+	- Saw that 18.231.189.135 from last section was from an ebs instance, so we tried our own:
+		- "cs615asa.netmeister.org,54.207.70.146"
+		didn't work, still have connect to host time outs.
+- Doing a port scan on cs615asa.netmeister.org to see if we're getting screwed with the port.
+	- Port 22 is open, it's perfectly fine to ssh with default port. Ruled that out.
+- Tried to SSH directly with the key we found, didn't work either.
+- What is this key for???
+
+HINT 2: But how do you change what host the script pulls the data from?  Review Week 06, Segment 1, to determine the order for host resolution.  You should be able to find which file to change point the script to a host of your choosing instead of the real one.
+
+- We looked through /etc/nsswitch.conf, /etc/hosts, and /etc/resolve.conf and found that we can only really mess with /etc/hosts.
+- Set up the existing SA EC2 instance with new users to try to fake as a viable connection to send ebs-resolve into.
+	- Having trouble with that. Running ./ebs-resolve is giving us errors:
+		`ham@cs615asa.netmeister.org: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).`
+	- Team Q was connecting fine as:
+		`cyclopes@cs615asa.netmeister.org: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).`
+- We started to mess with ssh keys to see if adding a new key into the sa-east-1 instance would lead to ebs-resolve accepting the connections to it, but we somehow managed to lock ourselves out of the machine entirely.
+- Hayden brought it back by updating the authorized key file with the key we were using.
+
+OPEN SESSION
+- Ran into issues with padding the tar file, but ultimately came through with Jan's test command and the use of `wc`.
+- We restarted the personal instance 4 separate times trying to find out why our public key was not permitted to be read.
+- Ultimately Charles and Edward popped in to help and found that because our /home/cyclopes/.ssh folders were not made by cyclopes, but by root, cyclopes could not read the file.
+	- `chown -R cyclopes /home/cyclopes/.ssh` solved this.
+- Worked like a charm after that.
+
+based charles
+based ed

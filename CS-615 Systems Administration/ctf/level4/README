@@ -1,0 +1,6 @@
+1. We accidentally submitted the Spanish passphrase misreading the hint.
+2. We ssh'd back into the level4 instance through the IPv6 sa-east-1 VPC EC2.
+3. We found the dir hormiguero which had files `hormiguero`, `level4`, and `post`. We couldn't `cat` level4 but could `hormiguero` and `post`. `hormiguero` was an executable and eventually we found doing `./hormiguero "oso hormiguero" level4` outputs `Nice.`. Looking at `post`, it behaves a similar way. `post` is a Perl script which specifies an EC2 instance.
+4. We tried a variation of ssh combinations of keys/passwords/usernames to get into the specified instance, none of which worked.
+5. We knew it was making a POST request so ran a tcpdump. It wasn't working with `-w` so we ran it streaming to an output file `hampcap` from the `/home/ham/` dir. We then ran the `hormiguero` and `post` commands. We then scp'd the file to our instance using `scp -i ssh-key -P 2244 ham@cs615ctf.stevens.netmeister.org:/home/ham/hampcap ./hampcap` and to our local machine with another `scp`.
+6. We found the HTTP request to the EC2 and the form item was: `At a top speed of 49 km/h, a giant anteater can run faster than Usain Bolt.` which is our passphrase.

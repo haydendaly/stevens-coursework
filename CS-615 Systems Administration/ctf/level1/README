@@ -1,0 +1,74 @@
+# Level 1
+## Steps
+1. We started with a brute force `nslookup` search of 155.246.66.0/19 with a bash script.
+2. We outputted the lookups into `outfile.txt` and parsed the resolved domains with a Python script.
+
+```py
+import hashlib
+
+TARGET = "99fd8438ac462a882d672be697f4615b59028ffc0eb67bead486fd94e076e2dc"
+
+def check_hash(domain):
+    readable_hash = hashlib.sha256(domain.encode()).hexdigest()
+    return readable_hash
+
+def clean_data(input_file):
+    lines = input_file.split("\n")
+    valid = []
+    for line in lines:
+        if "name = " in line:
+            valid.append(line.split(" ")[-1])
+    return valid
+
+if __name__ == '__main__':
+    input_file = open("outfile.txt", "r").read()
+    clean_input = clean_data(input_file)
+
+    for domain in clean_input:
+        new_hash = check_hash(domain)
+        if new_hash == TARGET:
+            print(domain, new_hash)
+```
+
+3. We then generated sha256 hashes and compared them to the provided one and got `eva.srcit.stevens-tech.edu`.
+4. We used nmap to see if any ports were open on eva, but only found port 22 open, which is for ssh.
+5. We then tried to SSH into eva, which also required a VPN connection, but none of us found any keys or passphrases in any of our folders or in the filesystem (that we could find).
+6. We got an email back from Jan as we guessed the passphrase was "eva" but this wasn't correct.
+7. Since it said we'll find the "passphrase on this host", we did tcpdumps of traceroute, telnet, ssh'ing, and that type of stuff and then dissected on wireshark.
+8. We then tried look through DNS related files like resolv.conf, hosts, etc.. We also were just poking around random folders hoping for a miracle.
+9. After literally hours of this, we started advancing our ls game to include dates with `ls -la`
+10. Doing `ls -la` in the top level dir showed us that dev, home, run, snap, sys, tmp were edited in May. Time for DFS
+11. dev was unsuccessful with files like dm-0, dm-0, printer, ptmx, tty, and the vda dirs. home was already searched. run had some scripts with the timestamp May 13th (which is today as of writing this) so those are too new because the SQL Injection team solved it on the 12th. snap was hopeful as it had a README updated on May 11th but nope. 
+12. At this point, we tried to write a bash script to do this manual labor for us of traversing all these files but stackoverflow told us about the -R flag (https://stackoverflow.com/questions/1767384/ls-command-how-can-i-get-a-recursive-full-path-listing-one-line-per-file) and then we ran `ls -laR`. However, the output of this was overwhelmingly large.
+13. We tried using `find directory -type f -newer boot` (where boot was modified 4/22) and then `find . -printf '%T@ %t %p\n' | sort -k 1 -nr | cut -d' ' -f2-` to find all directories that were made in the last month but proc had 1000s of files in it :-/. the second command was supposed to sort them in order but kept saying "Permission denied". This is where I looked at ls' man page and added `-t` which sorts them chronologically.
+14. Through `ls -aT > hdaly2.txt`, I was able to push the output to a textfile which I then used `scp hdaly2@eva.srcit.stevens-tech.edu:temp.txt temp.txt` to transfer to my desktop.
+15. Opening this file in VSCode, I used their search for "passphrase". There were 8 occurences but all from older files. I then searched for "May  8" which had 600 results. At this point, I was looking for anything fishy not ending with gz or a conf file.
+16. On "May  9", I found this dir `crash` that was created by user jschauma that looked sus because 💩 emoji:
+
+```
+drwxr-xr-x  3 jschauma professor 4096 May  9 18:59 user
+drwxr-xr-x  2 jschauma professor 4096 May  9 19:04 sysconfig
+drwxr-xr-x  3 jschauma professor 4096 May  9 19:04 resolvconf
+drwxr-xr-x  2 jschauma professor 4096 May  9 19:05 initramfs
+drwxr-xr-x  2 jschauma professor 4096 May  9 19:05 mount
+drwxrwxrwt  2 jschauma professor 4096 May  9 19:15 -f
+drwxrwxrwt  2 jschauma professor 4096 May  9 19:16 . 
+-rw-r--r--  1 jschauma professor   34 May  9 19:18 💩
+```
+
+17. Continuing my brute force search nearby, I found a file titled `this-is-the-wrong-file` in `/var/crash`. I knew I finally hit something.
+18. I cd'd into the `var/crash` and started my investigation. There was a lot of whack dirs in here when I did `ls -la`. The contents of 💩 was "Nope, not the right file either." so I am getting close.
+19. Using `ls -laR`, I found a file called `level2` created by cmagyar in `./. .` so had to do `cat ./.\ ./level2`. I was really hoping this file had the answer but nope, a doggo meme. Next dir was `./. ` and has a file titled `maybe-this-file` created at 5:16 on Sunday. I'm intrigued. I run `cat ./.\ /maybe-this-file`. NOPE, still not the right file.
+20. I see `-f` has `this-is-the-wrong-file` so check there. `cat "-f"/this-is-the-wrong-file` is not working :-/.
+21. This is really annoying because `-f` keeps saying this is an invalid arg so I go back a director and do `cat/crash/-f/this-is-the-wrong-file` and get "Don't look here. This is definitely the wrong file."
+22. I found a file called level2 in `.\n` but can't get to it for the life of me.
+
+```
+./var/crash/.	
+:
+total 12
+-rw-r--r--  1 jschauma professor   36 May  4 12:29 level2
+```
+
+23. This is 100% it but idk how to cd in `.^I/`, `.^I^I/`, or `.^I^M/`. I did `cat .??` and it showed `'.'$'\t\r'` so I was able to cd into there and `cat level2`
+24. Passphrase: "Ant eaters are myrmecophagous. Duh." I really hope this is it!

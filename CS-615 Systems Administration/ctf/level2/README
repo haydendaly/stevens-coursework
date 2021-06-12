@@ -1,0 +1,63 @@
+1.  Used `echo -n Vermilingua | md5sum` to get the passwd hash.
+2. Had to upload file and signature of it.
+3. Did some port inspection.
+
+```sh
+nmap -A ctf-level2.stevens.netmeister.org
+    saved to nmapRes.txt 
+nmap --script vuln ctf-level2.stevens.netmeister.org
+    saved to nmap-vulnRes.txt
+host ctf-level2.stevens.netmeister.org
+    ctf-level2.stevens.netmeister.org has address 35.153.142.52
+    ctf-level2.stevens.netmeister.org has IPv6 address 2600:1f18:400c:b800:52e4:536a:1491:435f
+curl --header
+    didn't get any results, said "no URL specified"
+nikto -h 35.153.142.52
+    Took longer than 30 minutes, stalled after:
+    - Nikto v2.1.5
+    ---------------------------------------------------------------------------
+    + Target IP:          35.153.142.52
+    + Target Hostname:    ec2-35-153-142-52.compute-1.amazonaws.com
+    + Target Port:        80
+    + Start Time:         2021-05-16 03:18:46 (GMT-4)
+    ---------------------------------------------------------------------------
+    + Server: bozohttpd/20201014
+    + The anti-clickjacking X-Frame-Options header is not present.
+    + Allowed HTTP Methods: GET, HEAD, POST 
+    + OSVDB-3092: /cgi-bin/: This might be interesting... possibly a system shell found.
+```
+
+4. Observed that port 22 was open, tried to ssh in but didn't work.
+5. Perhaps remote code execution vulnerability on this machine?
+
+    Going to be trying snippets of code in the file now.
+    Trying bash scripts to access `home/ham/anteater` directly:
+        payload.sh - no apparent effect
+            #!/bin/bash
+            echo test
+        payload - no apparent effect
+            echo test
+            ls -la
+    Trying HTML to try to affect the page:
+        payload - no apparent effect
+            document.write("test")
+    What is the file and signature being used for?
+    F12 isn't showing anything useful, other than the GET Response in Console containing a link to: ctf-level2.stevens.netmeister.org:443
+    Port 443 is https though.
+    Trying buffer overflow:
+        payload
+            1k A's - no apparent effect
+            5k - no apparent effect
+    Tried using the images on the web page itself: no effect
+    Nothing seems to be sus in the main page either.
+    Going to be reading the slides/transcript of the Config Management week (10/11) on Sunday, maybe you guys could do the same too.
+
+6. Stood up EC2 REST API to log requests, tried to curl that with script. This produced no logs on our end so shows that the uploaded script is not being run.
+7. Inspecting HTML shows hidden field "filename" which appears to being set default to "/home/ham/anteater".
+8. Edited HTML to remove hidden property and set file name as  `../../.ssh/authorized_keys/hdaly2.pub` trying to upload my public key. Keep getting invalid destination :-/. Tried changing the team name property to `../.ssh` but then that says "Invalid signature" so he's probably checking against the pgp keys for teams specifically.
+9. This is when I went to my EC2 and inspected the .ssh folder and realized authorized keys isn't a dir :-/. However, trying `../../root/.ssh/authorized_keys` didn't work either.
+10. After more inspection on the EC2 I realized that the .ssh folder was supposed to be in `ham` hence why me doing `ssh hdaly2@...` was not working. So trying `ssh ham@...` worked and the passpgrase is:
+
+```
+Anteaters have no teeth.
+```

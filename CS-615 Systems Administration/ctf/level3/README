@@ -1,0 +1,84 @@
+1. Tried ssh'ing back into previous challenge machines and was able to get in, a bunch of confusing files were present.
+
+2. Ran nmap from personal computer, got the ports:
+    22 ssh
+    80 http
+    443 https
+    554 rtsp?
+    587 smtp
+    7070 realserver?
+
+- Booted up a naive instance in sa-east-1 (based on ; DROP Table's public hint)
+    - used nmap, got:
+        22
+        25 (filtered)
+        80
+        443
+        587
+    - tried accessing the files, no changes from before.
+
+3. We tried scp'ing files locally to see them like readthe and ssh-keys in pilosa but didn't really work. ./readthe was an executable so tried doing `./readthe ssh-keys/README` but this forced us where we couldn't quit. Instead of exiting, it taunted us so we tried different ways to quit and like ctrl + \ which returned the date and a taunting message saying "Oh my, is that the time? Gotta go, gotta go...".
+
+4. This means that this is vulnerable for a code injection if we create our own "date" script in `/home/ham`. Our shell script is:
+	```
+	#!/bin/bash
+	cd /bin
+	./sh
+	```
+
+	Which gave us:
+		```
+		This directory contains the ssh keys needed to
+		access cs615ctf.stevens.netmeister.org, which
+		of course can only be accessed from a region
+		where anteaters roam free.
+		Since these files are kind of important, they
+		are backed up regularly using gaeb(8).
+		```
+
+5. Looking at the man of `gaeb` aspecified this strange file transfer protocol. We needed to send an email with:
+	Subject: "/home/pilosa/ssh-keys/ham.gpg is not a sloth"
+	Envelope-From header: "tamandua@cs615ctf.stevens.netmeister.org"
+
+	And we tried to send an email using mail:
+		mail anteater@ctf-level2.stevens.netmeister.org -s "/home/pilosa/ssh-keys/ham.gpg is not a sloth" -f tamandua@cs615ctf.stevens.netmeister.org
+
+6. We tried telnetting into netmeister's mail server from week 8's video, spent a long while wondering why we couldn't email to anyone in ctf-level2.
+	- Using panix kept giving us relay access denied errors when trying to send to anyone in ctf-level2.
+		telnet 166.84.7.99 25
+
+7. Used telnet to ctf-level2.stevens.netmeister.org and got access to our private key from /home/pilosa/ssh-keys.
+	- Turns out we didn't need to actually access a mail server to send an email,  we just needed to send to someone locally.
+		telnet ctf-level2.stevens.netmeister.org 25
+		EHLO localhost
+		MAIL FROM: <tamandua@cs615ctf.stevens.netmeister.org>
+		RCPT TO: <anteater@ctf-level2.stevens.netmeister.org.>
+		DATA
+		From: <ham@ctf-level2.stevens.netmeister.org.>
+		To: <anteater@ctf-level2.stevens.netmeister.org.>
+		Subject: /home/pilosa/ssh-keys/ham.gpg is not a sloth
+		.
+		quit
+
+8. We set up the VPC the same way as HW2, just in sa-east-1 (we found this out from a hint another team "bought" through the mailing list).
+
+9. We redid the port scan on cs615ctf.stevens.netmeister.org using ipv6 (another team gave us a hint to scan ipv6 like we did for homeworks 2 and 3). This showed us port 2244 and we were able to ssh in using the private key from pilosa.
+
+	SSHing gave us the message:
+		```
+		Sorry, no ants on this port.
+		```
+	and asked for a password.
+
+	Using "is not a sloth" didn't work, so the "Sorry, no ants" message is our answer attempt #1.
+
+10. Bonus: We forgot the -p flag for ssh in a state of exhaustion.
+	```
+	Congratulations!  You've completed Level 3!
+
+	The passphrase to unlock level 4 is:
+	An anteater's tongue can be up to 2' long.
+
+	Come back here to complete level 4 and then capture the flag!
+	Connection to cs615ctf.stevens.netmeister.org closed.
+	```
